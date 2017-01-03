@@ -43,5 +43,29 @@
         <text class="title">虎扑识货</text>
       </view>
     </view>
+    <view class="btn-choose">
+      <text>选择颜色 分类</text>
+      <text class="right-arrow"></text>
+    </view>
+  </view>
+</view>
+<view class="bottom-bar-wrapper">
+  <view class="tab-group">
+    <view class="tab-item">
+      <text class="fs-icon home"></text>
+      <text class="title">首页</text>
+    </view>
+    <view class="tab-item">
+      <text class="fs-icon cate"></text>
+      <text class="title">分类</text>
+    </view>
+    <view class="tab-item">
+      <text class="fs-icon shoppingcart"></text>
+      <text class="title">购物车</text>
+    </view>
+  </view>
+  <view class="btn-group">
+    <button id="addToCart">加入购物车</button>
+    <button id="buyNow">立即购买</button>
   </view>
 </view>

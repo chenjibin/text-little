@@ -1,4 +1,4 @@
-<!--index.wxml-->
+<!--商城首页-->
 <swiper class="home-swiper" indicator-dots="{{indicatorDots}}"
   autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="{{circular}}">
   <block wx:for="{{imgUrls}}" >
@@ -47,14 +47,14 @@
   <view class="each-item-wrapper">
     <view class="each-header clearfix">
       <text class="title">{{item.cname}}</text>
-      <navigator>
+      <navigator url="../goods/list?cateId={{item.cid}}">
        <text class="more">MORE+</text>
       </navigator>
     </view>
     <view class="cate-wrapper">
     <block wx:for="{{item.cates}}" >
       <view class="each-cate">
-        <navigator>
+        <navigator url="../goods/list?cateId={{item.cid}}">
           <image src="{{item.pic}}"></image>
         </navigator>
       </view>
@@ -63,17 +63,28 @@
     <view class="goods-wrapper">
      <block wx:for="{{item.goods}}" >
       <view class="each-good">
-        <navigator>
+        <navigator class="clearfix" url="../goods/detail?goodId={{item.gid}}">
           <image src="{{item.pic}}"></image>
           <text class="title">{{item.title}}</text>
-          <text class="old-price">{{item.oprice}}</text>
-          <text class="new-price">{{item.nprice}}</text>
+          <text class="old-price">¥{{item.oprice}}</text>
+          <text class="new-price">¥{{item.nprice}}</text>
         </navigator>
       </view>
      </block>
     </view>
     </view>
   </block>
+</view>
+<view class="bottom-cate">
+  <view class="brand-cate-wrapper">
+   <block wx:for="{{brandCateData}}">
+      <view class="brand-cate-item">
+        <navigator class="link-brand" url="../goods/list?brandId={{item.bid}}">
+          <image src="{{item.pic}}"></image>
+        </navigator>
+      </view>
+     </block>
+  </view>
 </view>
 
 

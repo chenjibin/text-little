@@ -1,8 +1,11 @@
 {
   "pages":[
     "pages/index/index",
+    "pages/cate/cate",
     "pages/logs/logs",
-    "pages/my/myIndex"
+    "pages/my/myIndex",
+    "pages/goods/detail",
+    "pages/goods/list"
   ],
   "window":{
     "backgroundTextStyle":"light",
@@ -24,7 +27,7 @@
        "selectedIconPath":"image/kefu-select.png",
       "text": "客服"
     },{
-      "pagePath": "pages/index/index",
+      "pagePath": "pages/cate/cate",
       "iconPath": "image/cate.png",
        "selectedIconPath":"image/cate-select.png",
       "text": "分类"

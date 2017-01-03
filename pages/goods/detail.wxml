@@ -1,0 +1,47 @@
+<!--商品详情-->
+<swiper class="good-swiper" indicator-dots="{{indicatorDots}}"
+  autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="{{circular}}" >
+  <block wx:for="{{goodInfo.smallPic}}" >
+    <swiper-item>
+      <image src="{{item}}" data-src="{{item}}" class="slide-image" bindtap="picLook"/>
+    </swiper-item>
+  </block>
+</swiper>
+<view class="content-wrapper">
+  <view class="good-info">
+    <text class="title">{{goodInfo.goodTitle}}</text>
+    <text class="spec">{{goodInfo.goodSpec}}</text>
+    <view class="info">
+      <view class="new-price">
+        <text>¥</text>
+        <text class="num">{{goodInfo.newPrice}}</text>
+      </view>
+      <view class="old-price">
+        <text>市场价:¥</text>
+        <text class="num">{{goodInfo.oldPrice}}</text>
+      </view>
+      <view class="sale-num">
+        <text>销量:</text>
+        <text class="num">{{goodInfo.saleNum}}</text>
+      </view>
+    </view>
+    <view class="server">
+      <view class="item-wrapper">
+        <text class="fs-icon bao">保</text>
+        <text class="title">正品保障</text>
+      </view>
+      <view class="item-wrapper">
+        <text class="fs-icon huo">货</text>
+        <text class="title">担保交易</text>
+      </view>
+      <view class="item-wrapper">
+        <text class="fs-icon qi">七</text>
+        <text class="title">七天退换</text>
+      </view>
+      <view class="item-wrapper">
+        <text class="fs-icon shi">识</text>
+        <text class="title">虎扑识货</text>
+      </view>
+    </view>
+  </view>
+</view>

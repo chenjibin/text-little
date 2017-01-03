@@ -1,0 +1,102 @@
+.good-swiper {
+    text-align: center;
+    height: 500rpx;
+}
+.good-swiper image {
+    width: 80%;
+    height: 500rpx;
+}
+
+.content-wrapper {
+    width: 100%;
+    padding: 20rpx;
+    box-sizing: border-box;
+}
+
+.content-wrapper .good-info {
+    font-size: 0;
+}
+
+.content-wrapper .good-info>.title {
+    font-size: 12px;
+    display: block;
+}
+
+.content-wrapper .good-info>.spec {
+    font-size: 12px;
+    color: #dc0707;
+}
+
+.content-wrapper .good-info .info {
+    margin-top: 10rpx;
+    width:100%;
+    font-size: 14px;
+    font-weight: 700;
+    border-bottom:1rpx solid #ddd;
+}
+.content-wrapper .good-info .num {
+    font-family: 'Anton';
+    font-weight: 500;
+    margin-left: 2px;
+}
+.content-wrapper .good-info .info .new-price {
+    display: inline-block;
+    margin-right: 20rpx;
+    vertical-align: top;
+}
+
+.content-wrapper .good-info .info .old-price {
+    display: inline-block;
+    margin-right: 20rpx;
+    vertical-align: top;
+}
+
+.content-wrapper .good-info .info .sale-num {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.content-wrapper .good-info .server {
+    font-size: 12px;
+    height: 36px;
+    line-height: 36px;
+    border-bottom: 1rpx solid #ddd;
+}
+
+.content-wrapper .good-info .server .item-wrapper {
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 20rpx;
+}
+.content-wrapper .good-info .server .item-wrapper .fs-icon {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 2px;
+    width: 16px;
+    height: 16px;
+    line-height: 16px;
+    text-align: center;
+    background-color: #333;
+    border-radius: 2px;
+    color:#fff;
+}
+.content-wrapper .good-info .server .item-wrapper .title {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.content-wrapper .good-info .server .item-wrapper .fs-icon.bao {
+    background-color: #F7412D;
+}
+
+.content-wrapper .good-info .server .item-wrapper .fs-icon.huo {
+    background-color: #48B04B;
+}
+
+.content-wrapper .good-info .server .item-wrapper .fs-icon.qi {
+    background-color: #3E4EB8;
+}
+
+.content-wrapper .good-info .server .item-wrapper .fs-icon.shi {
+    background-color: #dc0707;
+}

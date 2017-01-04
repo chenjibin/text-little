@@ -1,1 +1,38 @@
 <!--商品列表-->
+<view class="top-nav">
+  <radio-group class="choose-sort" bindchange="sortChange">
+    <view class="all-sort" bindtap="toggleSort">
+      <text class="title {{activeClass}}">{{radioData.nowSort}}</text>
+    </view>
+    <view class="toggleBox {{toggleClass}}" hidden="{{radioData.toggleFlag}}">
+     <label wx:for="{{radioData.radioBoxData}}" class="check-item">
+       <radio value="{{item.value}}"  class="el-radio" checked="{{item.checked}}">
+         <text class="title">{{item.value}}</text>
+         <icon type="success_no_circle" class="gouzi" color="#dc0707" size="20"></icon>
+       </radio>
+     </label>
+    </view>
+    <label class="sale-sort">
+      <radio value="{{radioData.radioSaleNum.value}}" class="el-radio">
+        <text class="title">{{radioData.radioSaleNum.value}}</text>
+      </radio>
+    </label>
+    <view class="search" bindtap="">
+      <icon type="search" size="20"></icon>
+      <text class="title">搜索</text>
+    </view>
+  </radio-group>
+</view>
+<view class="goods-wrapper">
+  <view class="good-item-wrapper" wx:for="{{goodsData}}">
+    <navigator url="./detail?goodId={{item.gid}}" class="good-link">
+      <image src="{{item.pic}}" class="good-pic"></image>
+      <view class="content">
+        <text class="title">{{item.title}}</text>
+        <text class="new-price">¥{{item.nprice}}</text>
+        <text class="old-price">¥{{item.oprice}}</text>
+      </view>
+    </navigator>
+  </view>
+</view>
+<view class="mask {{showClass}}" hidden="{{radioData.toggleFlag}}" bindtap="cancelMask"></view>

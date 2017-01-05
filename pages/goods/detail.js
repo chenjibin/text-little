@@ -8,6 +8,7 @@ Page({
         duration: 500,
         circular: true,
         goodInfo: {
+            defaultPic: 'http://img2.xyyzi.com/Upload/images/20160411/570b6641552dd.jpg',
             smallPic: [
                'http://img2.xyyzi.com/Upload/images/20160828/57c28da55b6b5.jpg',
                'http://img2.xyyzi.com/Upload/images/20160828/57c28da566251.jpg',
@@ -19,7 +20,42 @@ Page({
             newPrice: '346.00',
             oldPrice: '499.00',
             saleNum: '0'
-        }
+        },
+        skuOptions: [
+            {
+                skuName: '颜色分类',
+                options: [
+                    {
+                        name: '灰',
+                        pic: 'http://img2.xyyzi.com/Upload/images/20160411/570b6641552dd.jpg'
+                    },
+                     {
+                        name: '红',
+                        pic: 'http://img2.xyyzi.com/Upload/images/20160502/57274f5aeb3c6.jpg'
+                    }
+                ]
+            },
+             {
+                skuName: '鞋码',
+                options: [
+                    {
+                        name: '40'
+                    },
+                     {
+                        name: '41'
+                    },
+                     {
+                        name: '42'
+                    },
+                     {
+                        name: '43'
+                    },
+                     {
+                        name: '45'
+                    }
+                ]
+            }
+        ]
     },
     onLoad(options) {
       console.log(options)
@@ -32,5 +68,8 @@ Page({
           current: current, 
           urls: urls 
         })
+    },
+    skuOptionChange(e) {
+       console.log(e)
     }
 })

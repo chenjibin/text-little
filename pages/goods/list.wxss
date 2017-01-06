@@ -25,6 +25,7 @@
 }
 
 .top-nav .choose-sort .all-sort .title {
+    font-size: 14px;
 
 }
 .top-nav .choose-sort .all-sort .title.active {

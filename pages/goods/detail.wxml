@@ -41,7 +41,7 @@
         <text class="title">虎扑识货</text>
       </view>
     </view>
-    <view class="btn-choose">
+    <view class="btn-choose" bindtap="showPopBox">
       <text>选择颜色 分类</text>
       <text class="right-arrow"></text>
     </view>
@@ -67,12 +67,16 @@
     <button id="buyNow">立即购买</button>
   </view>
 </view>
-<view class="shoppingcart-wrapper">
+<view class="shoppingcart-wrapper {{showBox.cartClass}}">
   <view class="head-wrapper">
     <image src="{{goodInfo.defaultPic}}"></image>
     <view class="content">
-      <view class="price"><text>¥{{goodInfo.newPrice}}</text></view>
-      <view class="kucun"><text>库存993件</text></view>
+      <view class="price">
+        <text>¥{{goodInfo.newPrice}}</text>
+      </view>
+      <view class="kucun">
+        <text>库存{{goodInfo.totalKucun}}件</text>
+      </view>
       <view class="desc">
         <text class="item">请选择</text>
         <text class="item">鞋码</text>
@@ -81,13 +85,32 @@
     </view>
   </view>
   <view class="sku-wrapper">
-    <view class="sku-item-wrapper" wx:for="{{skuOptions}}">
+    <view class="sku-item-wrapper" wx:for="{{skuOptions}}" wx:for-index="optionNum">
       <view class="title-wrapper">
         <text class="title">{{item.skuName}}</text>
       </view>
       <view class="option-group">
-        <text wx:for="{{item.options}}" data-option="{{item.name}}" bindtap="" class="option-item">{{item.name}}</text>
+        <text wx:for="{{item.options}}" wx:for-index="eachId" data-eid="{{eachId}}" data-oid="{{optionNum}}" data-option="{{item.name}}" bindtap="" class="option-item {{item.select}}" bindtap="chooseSku">{{item.name}}</text>
       </view>
     </view>
   </view>
+  <view class="choosenum-wrapper clearfix">
+    <text class="title">数量</text>
+    <view class="num-wrapper">
+      <text class="descrease btn">－</text>
+      <label>
+        <input type="number" />
+      </label>
+      <text class="add btn">＋</text>
+    </view>
+  </view>
+  <view class="btngroup-wrapper">
+    <view class="add-cart btn-one">
+      <text class="title">加入购物车</text>
+    </view>
+    <view class="buy-now btn-one">
+      <text class="title">立即购买</text>
+    </view>
+  </view>
 </view>
+<view class="mask {{showBox.maskClass}}" bindtap="hidePopBox" hidden="{{showBox.flag}}"></view>

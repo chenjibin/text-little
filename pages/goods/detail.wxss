@@ -318,7 +318,10 @@
   background-color: #dc0707;
   color: #fff;
 }
-
+.shoppingcart-wrapper .sku-wrapper .sku-item-wrapper .option-group .option-item.out-of-stock {
+  background: #f8f8f8;
+  color: #ddd;
+}
 .shoppingcart-wrapper .choosenum-wrapper {
   padding: 0 12px;
   margin-bottom: 10px;

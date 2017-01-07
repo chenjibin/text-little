@@ -90,7 +90,7 @@
         <text class="title">{{item.skuName}}</text>
       </view>
       <view class="option-group">
-        <text wx:for="{{item.options}}" wx:for-index="eachId" data-eid="{{eachId}}" data-oid="{{optionNum}}" data-option="{{item.name}}" bindtap="" class="option-item {{item.select}}" bindtap="chooseSku">{{item.name}}</text>
+        <text wx:for="{{item.options}}" wx:for-index="eachId" data-eid="{{eachId}}" data-oid="{{optionNum}}" data-option="{{item.name}}" bindtap="" class="option-item {{item.select}} {{item.out}}" bindtap="chooseSku">{{item.name}}</text>
       </view>
     </view>
   </view>

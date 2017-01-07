@@ -37,11 +37,11 @@ Page({
                 },
                 {
                     name: '灰43',
-                    num: 3
+                    num: 0
                 },
                 {
                     name: '灰45',
-                    num: 15
+                    num: 0
                 },
                 {
                     name: '红40',
@@ -64,55 +64,66 @@ Page({
                     num: 16
                 }
             ]
-    },
-    skuOptions: [
-        {
-            skuName: '颜色分类',
-            options: [
-                {
-                    name: '灰',
-                    pic: 'http://img2.xyyzi.com/Upload/images/20160724/5794c70f29c68.jpg',
-                    select: ''
-                },
-                {
-                    name: '红',
-                    pic: 'http://img.gx.xyyzi.com/wd/product/20151211/1449775985-2843F09D-CC55-439E-820B-30C4F21B8B24.jpg',
-                    select: ''
-                }
-            ]
         },
-        {
-            skuName: '鞋码',
-            options: [
-                {
-                    name: '40',
-                    select: ''
-                },
-                {
-                    name: '41',
-                    select: ''
-                },
-                {
-                    name: '42',
-                    select: ''
-                },
-                {
-                    name: '43',
-                    select: ''
-                },
-                {
-                    name: '45',
-                    select: ''
-                }
-            ]
+        skuOptions: [
+            {
+                skuName: '颜色分类',
+                options: [
+                    {
+                        name: '灰',
+                        pic: 'http://img2.xyyzi.com/Upload/images/20160724/5794c70f29c68.jpg',
+                        select: '',
+                        out: ''
+                    },
+                    {
+                        name: '红',
+                        pic: 'http://img.gx.xyyzi.com/wd/product/20151211/1449775985-2843F09D-CC55-439E-820B-30C4F21B8B24.jpg',
+                        select: '',
+                        out: ''
+                    }
+                ]
+            },
+            {
+                skuName: '鞋码',
+                options: [
+                    {
+                        name: '40',
+                        select: '',
+                        out: ''
+                    },
+                    {
+                        name: '41',
+                        select: '',
+                        out: ''
+                    },
+                    {
+                        name: '42',
+                        select: '',
+                        out: ''
+                    },
+                    {
+                        name: '43',
+                        select: '',
+                        out: ''
+                    },
+                    {
+                        name: '45',
+                        select: '',
+                        out: ''
+                    }
+                ]
+            }
+        ],
+        showBox: {
+            cartClass: '',
+            maskClass: '',
+            flag: true
+        },
+        mainData: {
+            stateArr:[],
+            sendData: {}
         }
-    ],
-    showBox: {
-        cartClass: '',
-        maskClass: '',
-        flag: true
-    }
-},
+    },
     onLoad(options) {
         console.log(options)
     },
@@ -130,9 +141,11 @@ Page({
         let optionNum = e.target.dataset.oid
         let eachNum = e.target.dataset.eid
         let selectOne = skuData[optionNum]['options'][eachNum]
+        if (selectOne['out'] === 'out-of-stock') return
         let flag = selectOne['select'] === ''
         let defaultPic = this.data.goodInfo.defaultPicc
-
+        let optionName = e.target.dataset.option
+        let statedata = this.data.mainData.stateArr[optionNum]
         this.cancelAllSelect(skuData[optionNum]['options'], eachNum)
         if (flag) {
             let pic = selectOne['pic']
@@ -141,15 +154,20 @@ Page({
                     'goodInfo.defaultPic': pic
                 })
             }
+            
+            if(statedata) this.outHandler(statedata, skuData,'')
             selectOne['select'] = 'select'
+            this.data.mainData.stateArr[optionNum] = optionName
+            this.outHandler(optionName, skuData,'out-of-stock')
 
         } else {
-            if(selectOne['pic']) {
+            if (selectOne['pic']) {
                 this.setData({
                     'goodInfo.defaultPic': defaultPic
                 })
             }
             selectOne['select'] = ''
+            this.outHandler(optionName, skuData,'')
         }
         this.setData({
             skuOptions: skuData
@@ -157,8 +175,29 @@ Page({
     },
     cancelAllSelect(value, eachNum) {
         value.forEach((item, index) => {
-            if (eachNum === index) return
+           //  if (eachNum === index) return
             item.select = ''
+        })
+    },
+    outHandler(name, skuData,calss) {
+        let dataRaary = []
+        let kucunArray = this.data.goodInfo.eachKucun
+        kucunArray.forEach((item) => {
+            if (item['name'].indexOf(name) >= 0) {
+                dataRaary.push(item)
+            }
+        })
+        dataRaary.forEach((item, index) => {
+            if (item.num === 0) {
+                let a = item['name'].replace(name, '')
+                skuData.forEach((v, i) => {
+                    v['options'].forEach((n, w) => {
+                        if (n.name === a) {
+                            n.out = calss
+                        }
+                    })
+                })
+            }
         })
     },
     showPopBox() {
@@ -169,22 +208,22 @@ Page({
             }
         })
         setTimeout(() => {
-        this.setData({
-            'showBox.maskClass': 'show',
-        })
-    }, 10)
+            this.setData({
+                'showBox.maskClass': 'show',
+            })
+        }, 10)
     },
-hidePopBox() {
-    this.setData({
-        showBox: {
-            cartClass: '',
-            maskClass: ''
-        }
-    })
-    setTimeout(() => {
+    hidePopBox() {
         this.setData({
-            'showBox.flag': true,
+            showBox: {
+                cartClass: '',
+                maskClass: ''
+            }
         })
-    }, 300)
-}
+        setTimeout(() => {
+            this.setData({
+                'showBox.flag': true,
+            })
+        }, 300)
+    }
 })

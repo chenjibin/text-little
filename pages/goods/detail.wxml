@@ -42,14 +42,17 @@
       </view>
     </view>
     <view class="btn-choose" bindtap="showPopBox">
-      <text>选择颜色 分类</text>
+      <text class="item">{{mainData.desc}}</text>
+      <text class="item" wx:if="{{!mainData.sendData.cate}}">颜色分类</text>
+      <text class="item" wx:if="{{!mainData.sendData.size}}">鞋码</text>
+      <text class="item" wx:if="{{mainData.sendData.cate && mainData.sendData.size}}">"{{mainData.sendData.cate}}" "{{mainData.sendData.size}}"</text>
       <text class="right-arrow"></text>
     </view>
   </view>
 </view>
 <view class="bottom-bar-wrapper">
   <view class="tab-group">
-    <view class="tab-item">
+    <view class="tab-item" bindtap="toHome">
       <text class="fs-icon home"></text>
       <text class="title">首页</text>
     </view>
@@ -81,7 +84,7 @@
         <text class="item">{{mainData.desc}}</text>
         <text class="item" wx:if="{{!mainData.sendData.cate}}">颜色分类</text>
         <text class="item" wx:if="{{!mainData.sendData.size}}">鞋码</text>
-        <text class="item" wx:if="{{mainData.sendData.cate && mainData.sendData.size}}">"{{mainData.sendData.cate}}"  "{{mainData.sendData.size}}"</text>
+        <text class="item" wx:if="{{mainData.sendData.cate && mainData.sendData.size}}">"{{mainData.sendData.cate}}" "{{mainData.sendData.size}}"</text>
       </view>
     </view>
   </view>
@@ -98,15 +101,15 @@
   <view class="choosenum-wrapper clearfix">
     <text class="title">数量</text>
     <view class="num-wrapper">
-      <text class="descrease btn">－</text>
+      <text class="descrease btn" bindtap="decreaseNum">－</text>
       <label>
-        <input type="number" />
+        <input type="number" value="{{mainData.sendData.num}}" bindblur="inputBlurHandler" />
       </label>
-      <text class="add btn">＋</text>
+      <text class="add btn" bindtap="addNum">＋</text>
     </view>
   </view>
   <view class="btngroup-wrapper">
-    <view class="add-cart btn-one">
+    <view class="add-cart btn-one" bindtap="addToCart">
       <text class="title">加入购物车</text>
     </view>
     <view class="buy-now btn-one">

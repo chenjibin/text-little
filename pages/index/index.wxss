@@ -145,7 +145,7 @@
 }
 
 .main-cate .each-item-wrapper .each-header navigator .more {
-   font-size: 12px;
+   font-size: 10px;
 }
 .main-cate .each-item-wrapper .cate-wrapper {
   display: flex;

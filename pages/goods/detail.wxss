@@ -130,6 +130,13 @@
   color: #666;
   border-bottom: 1rpx solid #ddd;
 }
+.content-wrapper .good-info .btn-choose .item {
+  font-size: 14px;
+  margin-right: 6px;
+  color: #333;
+
+}
+
 
 .content-wrapper .good-info .btn-choose .right-arrow {
   display: block;

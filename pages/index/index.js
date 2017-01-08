@@ -256,7 +256,7 @@ Page({
     ]
   },
   onLoad() {
-    wx.showNavigationBarLoading()
+    console.log('aa')
   },
   onShow() {
     wx.hideNavigationBarLoading()

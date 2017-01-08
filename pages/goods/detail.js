@@ -24,23 +24,23 @@ Page({
             totalKucun: '933',
             eachKucun: [
                 {
-                    name: '灰/40/240/透气/新款40/240',
+                    name: '灰/透气/新款40/240',
                     num: 10
                 },
                 {
-                    name: '灰/40/240/透气/新款41/245',
+                    name: '灰/透气/新款41/245',
                     num: 0
                 },
                 {
-                    name: '灰/40/240/透气/新款42/255',
+                    name: '灰/透气/新款42/255',
                     num: 2
                 },
                 {
-                    name: '灰/40/240/透气/新款43/260',
+                    name: '灰/透气/新款43/260',
                     num: 0
                 },
                 {
-                    name: '灰/40/240/透气/新款45/265',
+                    name: '灰/透气/新款45/265',
                     num: 0
                 },
                 {
@@ -71,7 +71,7 @@ Page({
                 name: 'cate',
                 options: [
                     {
-                        name: '灰/40/240/透气/新款',
+                        name: '灰/透气/新款',
                         pic: 'http://img2.xyyzi.com/Upload/images/20160724/5794c70f29c68.jpg',
                         select: '',
                         out: ''
@@ -128,13 +128,14 @@ Page({
             sendData: {
                 cate: '',
                 size: '',
-                num: ''
+                num: '1'
             }
         }
     },
     onLoad(options) {
         console.log(options)
     },
+    // 图片预览
     picLook(event) {
         let that = this
         let urls = that.data.goodInfo.smallPic
@@ -144,6 +145,7 @@ Page({
             urls: urls
         })
     },
+    // 选择sku
     chooseSku(e) {
         let skuData = this.data.skuOptions
         let optionNum = e.target.dataset.oid
@@ -155,7 +157,7 @@ Page({
         let defaultPic = this.data.goodInfo.defaultPicc
         let optionName = e.target.dataset.option
         let statedata = this.data.mainData.stateArr[optionNum]
-        if (flag) {
+        if (flag) { // sku切换
             this.cancelAllSelect(skuData[optionNum]['options'], eachNum)
             let pic = selectOne['pic']
             if (pic) {
@@ -163,7 +165,6 @@ Page({
                     'goodInfo.defaultPic': pic
                 })
             }
-
 
             this.data.mainData.sendData[oName] = optionName
 
@@ -177,6 +178,12 @@ Page({
                         this.data.mainData.stock = item.num
                     }
                 })
+                let newNum = parseInt(this.data.mainData.sendData.num)
+                let nowStock = parseInt(this.data.mainData.stock)
+                if (newNum > nowStock) {
+                    this.data.mainData.sendData.num = nowStock
+                }
+
                 this.data.mainData.desc = '已选:'
             }
             this.setData({
@@ -189,7 +196,7 @@ Page({
             this.data.mainData.stateArr[optionNum] = optionName
             this.outHandler(optionName, skuData, 'out-of-stock')
 
-        } else {
+        } else { // 选中的suk取消选中
             if (selectOne['pic']) {
                 this.setData({
                     'goodInfo.defaultPic': defaultPic
@@ -198,8 +205,7 @@ Page({
 
             this.data.mainData.sendData[oName] = ''
             this.data.mainData.desc = '请选择'
-
-             this.data.mainData.stock = this.data.goodInfo.totalKucun
+            this.data.mainData.stock = this.data.goodInfo.totalKucun
 
 
             this.setData({
@@ -217,12 +223,14 @@ Page({
             skuOptions: skuData
         })
     },
+    // 取消选中状态
     cancelAllSelect(value, eachNum) {
         value.forEach((item, index) => {
             //  if (eachNum === index) return
             item.select = ''
         })
     },
+    // 处理无库存展示
     outHandler(name, skuData, calss) {
         let dataRaary = []
         let kucunArray = this.data.goodInfo.eachKucun
@@ -244,6 +252,33 @@ Page({
             }
         })
     },
+    // 数量加减一
+    addNum() {
+        let newNum = parseInt(this.data.mainData.sendData.num) + 1
+        if (newNum > this.data.mainData.stock) return
+        this.setData({
+            'mainData.sendData.num': newNum
+        })
+    },
+    // 数量减一
+    decreaseNum() {
+        let newNum = parseInt(this.data.mainData.sendData.num) - 1
+        if (newNum <= 0) return
+        this.setData({
+            'mainData.sendData.num': newNum
+        })
+    },
+    // input失去焦点的处理函数
+    inputBlurHandler(event) {
+        let newNum = parseInt(event.detail.value)
+        newNum ? newNum = newNum : newNum = this.data.mainData.sendData.num
+        let nowStock = parseInt(this.data.mainData.stock)
+        newNum > nowStock ? newNum = nowStock : newNum = newNum
+        this.setData({
+            'mainData.sendData.num': newNum
+        })
+    },
+    // pop弹出
     showPopBox() {
         this.setData({
             showBox: {
@@ -257,6 +292,17 @@ Page({
             })
         }, 10)
     },
+
+    addToCart() {
+        console.log(this.data.mainData.sendData)
+    },
+    toHome() {
+        wx.switchTab({
+             url: '../index/index'
+        })
+
+    },
+    // pop关闭
     hidePopBox() {
         this.setData({
             showBox: {

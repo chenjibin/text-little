@@ -279,6 +279,7 @@
 }
 
 .shoppingcart-wrapper .head-wrapper .content .desc .item {
+  margin-right: 4px;
 }
 
 .shoppingcart-wrapper .sku-wrapper {

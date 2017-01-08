@@ -75,22 +75,23 @@
         <text>¥{{goodInfo.newPrice}}</text>
       </view>
       <view class="kucun">
-        <text>库存{{goodInfo.totalKucun}}件</text>
+        <text>库存{{mainData.stock}}件</text>
       </view>
       <view class="desc">
-        <text class="item">请选择</text>
-        <text class="item">鞋码</text>
-        <text class="item">颜色分类</text>
+        <text class="item">{{mainData.desc}}</text>
+        <text class="item" wx:if="{{!mainData.sendData.cate}}">颜色分类</text>
+        <text class="item" wx:if="{{!mainData.sendData.size}}">鞋码</text>
+        <text class="item" wx:if="{{mainData.sendData.cate && mainData.sendData.size}}">"{{mainData.sendData.cate}}"  "{{mainData.sendData.size}}"</text>
       </view>
     </view>
   </view>
   <view class="sku-wrapper">
-    <view class="sku-item-wrapper" wx:for="{{skuOptions}}" wx:for-index="optionNum">
+    <view class="sku-item-wrapper" wx:for="{{skuOptions}}" wx:for-index="optionNum" wx:for-item="oItem">
       <view class="title-wrapper">
-        <text class="title">{{item.skuName}}</text>
+        <text class="title">{{oItem.skuName}}</text>
       </view>
       <view class="option-group">
-        <text wx:for="{{item.options}}" wx:for-index="eachId" data-eid="{{eachId}}" data-oid="{{optionNum}}" data-option="{{item.name}}" bindtap="" class="option-item {{item.select}} {{item.out}}" bindtap="chooseSku">{{item.name}}</text>
+        <text wx:for="{{oItem.options}}" wx:for-index="eachId" data-eid="{{eachId}}" data-oname="{{oItem.name}}" data-oid="{{optionNum}}" data-option="{{item.name}}" bindtap="" class="option-item {{item.select}} {{item.out}}" bindtap="chooseSku">{{item.name}}</text>
       </view>
     </view>
   </view>

@@ -122,6 +122,7 @@ Page({
             flag: true
         },
         mainData: {
+            btnState:'1',
             desc: '请选择',
             stateArr: [],
             stock: '933',
@@ -279,8 +280,11 @@ Page({
         })
     },
     // pop弹出
-    showPopBox() {
+    showPopBox(event) {
+        let btnState = event.target.dataset.num
+
         this.setData({
+            'mainData.btnState':btnState,
             showBox: {
                 cartClass: 'show',
                 flag: false

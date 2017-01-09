@@ -41,7 +41,7 @@
         <text class="title">虎扑识货</text>
       </view>
     </view>
-    <view class="btn-choose" bindtap="showPopBox">
+    <view class="btn-choose" bindtap="showPopBox" data-num="3">
       <text class="item">{{mainData.desc}}</text>
       <text class="item" wx:if="{{!mainData.sendData.cate}}">颜色分类</text>
       <text class="item" wx:if="{{!mainData.sendData.size}}">鞋码</text>
@@ -66,8 +66,8 @@
     </view>
   </view>
   <view class="btn-group">
-    <button id="addToCart">加入购物车</button>
-    <button id="buyNow">立即购买</button>
+    <button id="addToCart" bindtap="showPopBox" data-num="1">加入购物车</button>
+    <button id="buyNow" bindtap="showPopBox" data-num="2">立即购买</button>
   </view>
 </view>
 <view class="shoppingcart-wrapper {{showBox.cartClass}}">
@@ -109,11 +109,17 @@
     </view>
   </view>
   <view class="btngroup-wrapper">
-    <view class="add-cart btn-one" bindtap="addToCart">
+    <view class="add-cart btn-one" bindtap="addToCart" wx:if="{{mainData.btnState == 3}}">
       <text class="title">加入购物车</text>
     </view>
-    <view class="buy-now btn-one">
+    <view class="buy-now btn-one" bindtap="buyNow" wx:if="{{mainData.btnState == 3}}">
       <text class="title">立即购买</text>
+    </view>
+    <view class="btn-two" bindtap="addToCart" wx:if="{{mainData.btnState == 1}}">
+      <text class="title">确定</text>
+    </view>
+    <view class="btn-two" bindtap="buyNow" wx:if="{{mainData.btnState == 2}}">
+      <text class="title">确定</text>
     </view>
   </view>
 </view>

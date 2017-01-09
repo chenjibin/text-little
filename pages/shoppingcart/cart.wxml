@@ -1,0 +1,22 @@
+<view class="">
+  <checkbox-group bindchange="checkboxChange" class="check-group">
+    <view class="each-item" wx:for="{{cartData}}">
+      <label class="checkbox" class="check-wrapper">
+        <checkbox value="{{item.id}}"  />
+      </label>
+      <view class="mian-content">
+        <image src="{{item.pic}}" class="good-pic"></image>
+        <view class="content">
+          <view class="left-area">
+            <text class="title">{{item.title}}</text>
+            <text class="desc">{{item.specification}}</text>
+          </view>
+          <view class="right-area">
+            <text class="sale-price">{{item.sale_price}}</text>
+            <text class="number">{{item.num}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </checkbox-group>
+</view>

@@ -1,0 +1,62 @@
+.check-group {
+}
+
+.check-group .each-item {
+  display: flex;
+  background-color: #f6f6f6;
+  padding: 10px 0;
+  margin-bottom: 6px;
+}
+
+.check-group .each-item .check-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 35px;
+  width: 35px;
+}
+
+.check-group .each-item .check-wrapper checkbox {
+}
+
+.check-group .each-item .mian-content {
+  display: flex;
+}
+
+.check-group .each-item .mian-content .good-pic {
+  flex: 0 0 75px;
+  width: 75px;
+  height: 75px;
+}
+
+.check-group .each-item .mian-content .content {
+  display: flex;
+  flex: 1;
+}
+
+.check-group .each-item .mian-content .content .left-area {
+  flex: 1;
+  padding: 0 10px;
+}
+
+.check-group .each-item .mian-content .content .left-area .title {
+  display: block;
+}
+
+.check-group .each-item .mian-content .content .left-area .desc {
+  display: block;
+  margin-top: 4px;
+}
+
+.check-group .each-item .mian-content .content .right-area {
+  flex: 0 0 52px;
+  width: 52px;
+}
+
+.check-group .each-item .mian-content .content .right-area .sale-price {
+  display: block;
+}
+
+.check-group .each-item .mian-content .content .right-area .number {
+  display: block;
+}

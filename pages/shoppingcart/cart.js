@@ -10,7 +10,8 @@ Page({
         sale_price: '549.00',
         num: '1',
         specification: '颜色:749170-001  鞋码:44/280',
-        model_id: '1'
+        model_id: '1',
+        check: false
       }, {
         id: '536',
         title: 'Adidas阿迪达斯女装短袖 2016夏新款透气运动 针织圆领T恤AZ9463',
@@ -20,15 +21,56 @@ Page({
         sale_price: '169.00',
         num: '1',
         specification: '颜色:AZ9463  尺码:M（165/88A）',
-        model_id: '2'
+        model_id: '2',
+        check: false
       }
-    ]
+    ],
+    mainData: {
+      allCheck: false,
+      num: 0,
+      totalPrice: 0,
+      sendData: {
+        oidArray: [],
+        numberArray: []
+      }
+    }
+  },
+  onLoad() {
+    console.log('bb')
   },
   onShow() {
-    console.log('aa')
+
   },
   checkboxChange(e) {
-    console.log(e)
-
+    let value = e.detail.value
+    let valueLength = value.length
+    let cartDataLength = this.data.cartData.length
+    if (valueLength === cartDataLength) {
+      this.setData({
+        'mainData.allCheck': true
+      })
+    } else {
+      this.setData({
+        'mainData.allCheck': false
+      })
+    }
+    this.setData({
+      'mainData.num': valueLength
+    })
+  },
+  chooseAll() {
+    let flag = this.data.mainData.allCheck
+    let cartData = this.data.cartData
+    let cartDataLength = cartData.length
+    let nowNum
+    flag ? nowNum = 0 : nowNum = cartDataLength
+    cartData.forEach((item) => {
+      item.check = !flag
+    })
+    this.setData({
+      'cartData': cartData,
+      'mainData.allCheck': !flag,
+      'mainData.num': nowNum
+    })
   }
 })

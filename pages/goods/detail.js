@@ -122,7 +122,7 @@ Page({
             flag: true
         },
         mainData: {
-            btnState:'1',
+            btnState:'',
             desc: '请选择',
             stateArr: [],
             stock: '933',
@@ -281,7 +281,8 @@ Page({
     },
     // pop弹出
     showPopBox(event) {
-        let btnState = event.target.dataset.num
+        let btnState = parseInt(event.target.dataset.num)
+        console.log(event.target.dataset)
 
         this.setData({
             'mainData.btnState':btnState,
@@ -306,6 +307,12 @@ Page({
         })
 
     },
+     toCart() {
+        wx.switchTab({
+             url: '../shoppingcart/cart'
+        })
+
+    },
     // pop关闭
     hidePopBox() {
         this.setData({
@@ -317,6 +324,7 @@ Page({
         setTimeout(() => {
             this.setData({
                 'showBox.flag': true,
+                'mainData.btnState': ''
             })
         }, 300)
     }

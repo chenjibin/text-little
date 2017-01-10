@@ -1,11 +1,29 @@
+.same-check .wx-checkbox-input {
+  border-radius: 50%;
+  border: 1rpx solid #ddd;
+}
+
+.same-check .wx-checkbox-input-checked {
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAEgElEQVR4Xu2b3VHbQBDHd2UsPcapIDAjPwcqwKkAqACoIFBBSAWQCoAKgApiKoA844xNBZhHn/Ft5iR5sK2v+5SUMZrxk6W7/f9ub7W3d0JY8wvXXD98APjwgAoIDNvtbe55u0TUA8QOAPQKuu0D0RgR+x7n91vT6aNLE51NgSff30OAfRC/WLTeRTQGgFvi/Lr79tbXayT/KesABu32IXjeGQBs2jYWAEbA+Vk4nV7batsagEg44oXRaMursgbCGICY3zPPOy+Z1/LS1O7stzg/NYkTRgAG7fYRIJ5XNOrZaESMIDoNp9MrNXbx3doABr5/CYhHOp06eYboKmTsWLVtZQBDgM4sFi8ifLMuDQjKAJ58/wERt5ulfMEaotuQsQNZ+5QANM7t81QqeII0gCffP0PEH7Jk676PiH52GRP5SOElBeBpY6OHrdbvssaa9j/NZt/KssdSAEnQG9b6qtMlSzRuMba1BSDS6cyrFMCg3b4Az/uua0Ptz3H+K5xOT7QAJFneQ+0iDA1oTSbCC0ZZzRR6wMD3bwFxz7B/N48T3RHAI8bJ2JfCToiuQ8Yyk7ZcAEOAzVkQDN1Yb9gq58eLqa/MQOV5QS6Age9fAeKhoan2H18RLzqQekvlxIIiAC+Ni/wZ4qUBEI1Dxj6vjkgmgGiV53mX9ofPoMUc8aLFge/fSK1NiA5Cxm4XrcgG0DT3LxYvvyrNmAbZAOLg56Kkpe4CtsQDABE9dhnbKfSAKPMLghd1Sx08YVH83LpwMlka9JQHSEVUB1pTTToQL/pYXR+kAPwNghMCEDW++i5H4iNBK22nPUB92ftMIs0k6iDiV2NqLsXHcWBpmWwEgADuNyaT/flqy9h7HIuPpkAZAJUMMGu9rZ1DVCDeOoAW5ztZNXllCBWJlwKgUvoqKjtJQ6hQvHUAWVF1MQiWQqhYvBQArUBWJCRvXVGDeLnXoG4BVAVCXeJlEiGjVFgGQo3ihQeUpsLR8jIIRP2suMyUl/EUCBRVprzaXBWbLkT0p8vY0q6Wm+VwAYQsblWIT+Z/qkKcB0Aca7kxSmslIVQmPn4FyBVEkirLGBA/uYRQsfjXkLHUWSX3RdEcT6hUfLwKzNwgqaYsni5jy5exjFzw/WHlsngyDWyWxvtI1Kd4I6PacpvOxogAsPZbY5EX/Oebo2XnBEp3h5Pt8ZHxG8HSXFZs5rk1mWwbbY+LDhtTKFVUb+WAxLxPlTqBop1Obi9z/XmnpVNgaX3ftB2jPHQFUX/1ESUA0XQIgj4C7DoZNhuNEt2FjEmfYVQGkARFcSi6eVvnCiOvNQUaPR00xAs9yh6wBCE+LC28wWzRZOL6RK9AdFL5Yem5zSJbfPO8izriQrIxc5RXZJHhauQBKW+IvxTRqyTJWPt+z3Py5YjWEfnFrqwBmDealMJdgbAm3DgIlg1YlD16nlj5ieqSfowQczz+aOqq7NhrmU1Z/1v3gKxOks/meuKzOULsFMULMa+RaISIjx7nfZPPYWSAVAJAxpC67vkAUBf5pvS79h7wD+/WtF8crDrcAAAAAElFTkSuQmCC");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  border: 1rpx solid #dc0707;
+}
+
+.same-check .wx-checkbox-input.wx-checkbox-input-checked::before {
+  content: '';
+}
+
 .check-group {
 }
 
 .check-group .each-item {
   display: flex;
-  background-color: #f6f6f6;
   padding: 10px 0;
   margin-bottom: 6px;
+  padding-left: 6px;
+  background-color: #f6f6f6;
 }
 
 .check-group .each-item .check-wrapper {
@@ -36,27 +54,129 @@
 
 .check-group .each-item .mian-content .content .left-area {
   flex: 1;
-  padding: 0 10px;
+  padding: 0 0 0 10px;
 }
 
 .check-group .each-item .mian-content .content .left-area .title {
   display: block;
+  font-weight: 200;
+  font-size: 10px;
 }
 
 .check-group .each-item .mian-content .content .left-area .desc {
   display: block;
   margin-top: 4px;
+  font-weight: 200;
+  font-size: 10px;
 }
 
 .check-group .each-item .mian-content .content .right-area {
-  flex: 0 0 52px;
-  width: 52px;
+  flex: 0 0 30%;
+  width: 30%;
+  text-align: center;
+  box-sizing: border-box;
 }
 
 .check-group .each-item .mian-content .content .right-area .sale-price {
   display: block;
+  color: #dc0707;
+  font-size: 14px;
 }
 
 .check-group .each-item .mian-content .content .right-area .number {
   display: block;
+  margin-top: 16px;
+}
+
+.tooBar-wrapper {
+  display: flex;
+  height: 36px;
+  padding-left: 6px;
+  padding-right: 12px;
+}
+
+.tooBar-wrapper .chooseAll-wrapper {
+  display: flex;
+  flex: 0 0 35px;
+  width: 35px;
+  align-items: center;
+  justify-content: center;
+}
+
+.tooBar-wrapper .chooseAll-wrapper .choose-all {
+}
+
+.tooBar-wrapper .content {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.tooBar-wrapper .content .store-name {
+  font-size: 14px;
+}
+
+.tooBar-wrapper .content .toolBtn-wrapper {
+}
+
+.tooBar-wrapper .content .toolBtn-wrapper .edit {
+  display: inline-block;
+  height: 36px;
+  line-height: 36px;
+}
+
+.payBar-wrapper {
+  display: flex;
+  position: fixed;
+  padding-left: 6px;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  line-height: 50px;
+  border-bottom: 1rpx solid #ddd;
+  border-top: 1rpx solid #ddd;
+  box-sizing: border-box;
+}
+
+.payBar-wrapper .chooseAll-wrapper {
+  flex: 0 0 60px;
+  width: 60px;
+}
+
+.payBar-wrapper .content {
+  flex: 1;
+}
+
+.payBar-wrapper .content text {
+  float: right;
+  margin-right: 6px;
+}
+
+.payBar-wrapper .content .heji {
+  font-size: 14px;
+}
+
+.payBar-wrapper .content .money {
+  font-size: 14px;
+  color: #ff4500;
+}
+
+.payBar-wrapper .content .no-email {
+  font-size: 10px;
+  color: #999;
+}
+
+.payBar-wrapper .pay-btn {
+  flex: 0 0 105px;
+  width: 105px;
+  text-align: center;
+  background-color: #ff4500;
+  color: #fff;
+}
+
+.payBar-wrapper .pay-btn text {
+  font-size: 16px;
+  font-weight: 700;
 }

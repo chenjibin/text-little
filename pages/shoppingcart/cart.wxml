@@ -1,8 +1,19 @@
-<view class="">
+<view class="same-check" wx:if="{{cartData}}">
+  <view class="tooBar-wrapper">
+    <label class="chooseAll-wrapper" bindtap="chooseAll">
+      <checkbox checked="{{mainData.allCheck}}" class="choose-all" />
+    </label>
+    <view class="content">
+      <text class="store-name">幸运叶子官方商城</text>
+      <view class="toolBtn-wrapper">
+        <text class="edit" bindtap="editChoose">编辑</text>
+      </view>
+    </view>
+  </view>
   <checkbox-group bindchange="checkboxChange" class="check-group">
     <view class="each-item" wx:for="{{cartData}}">
       <label class="checkbox" class="check-wrapper">
-        <checkbox value="{{item.id}}"  />
+        <checkbox value="{{item.id}}" checked="{{item.check}}" />
       </label>
       <view class="mian-content">
         <image src="{{item.pic}}" class="good-pic"></image>
@@ -12,11 +23,26 @@
             <text class="desc">{{item.specification}}</text>
           </view>
           <view class="right-area">
-            <text class="sale-price">{{item.sale_price}}</text>
-            <text class="number">{{item.num}}</text>
+            <text class="sale-price">¥{{item.sale_price}}</text>
+            <text class="number">x{{item.num}}</text>
           </view>
         </view>
       </view>
     </view>
   </checkbox-group>
+</view>
+<view class="payBar-wrapper same-check">
+  <label class="chooseAll-wrapper" bindtap="chooseAll">
+    <checkbox checked="{{mainData.allCheck}}" class="choose-all" />
+    <text>全选</text>
+  </label>
+  <view class="content">
+    <text class="no-email">不含运费</text>
+    <text class="money">¥{{mainData.totalPrice}}</text>
+    <text class="heji">合计:</text>
+  </view>
+  <view class="pay-btn" bindtap="payHandler">
+    <text class="title">结算</text>
+    <text class="num">({{mainData.num}})</text>
+  </view>
 </view>

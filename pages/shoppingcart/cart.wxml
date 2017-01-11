@@ -6,7 +6,7 @@
     <view class="content">
       <text class="store-name">幸运叶子官方商城</text>
       <view class="toolBtn-wrapper">
-        <text class="edit" bindtap="editChoose">编辑</text>
+        <text class="edit" bindtap="editHandler">{{mainData.editShowFlag? '完成' : '编辑'}}</text>
       </view>
     </view>
   </view>
@@ -25,6 +25,18 @@
           <view class="right-area">
             <text class="sale-price">¥{{item.sale_price}}</text>
             <text class="number">x{{item.num}}</text>
+          </view>
+          <view class="toggle-box {{mainData.editShow}}">
+            <view class="input-wrapper">
+              <text class="btn desrease">－</text>
+              <label class="input-box">
+                <input type="text" value="{{item.num}}"/>
+              </label>
+              <text class="btn add">＋</text>
+            </view>
+            <view class="remove-btn" bindtap="removeGoodHandler" data-gid="{{item.id}}">
+              <text class="title">删除</text>
+            </view>
           </view>
         </view>
       </view>

@@ -19,7 +19,19 @@ Page({
         item_id: '6088',
         stock_num: '2',
         sale_price: '169.00',
-        num: '1',
+        num: '2',
+        specification: '颜色:AZ9463  尺码:M（165/88A）',
+        model_id: '2',
+        check: false
+      },
+       {
+        id: '537',
+        title: 'Adidas阿迪达斯女装短袖 2016夏新款透气运动 针织圆领T恤AZ9463',
+        pic: 'http://img2.xyyzi.com/Upload/images/20160703/5778dedabbab1.jpg',
+        item_id: '6088',
+        stock_num: '2',
+        sale_price: '169.00',
+        num: '3',
         specification: '颜色:AZ9463  尺码:M（165/88A）',
         model_id: '2',
         check: false
@@ -29,6 +41,8 @@ Page({
       allCheck: false,
       num: 0,
       totalPrice: 0,
+      editShow: '',
+      editShowFlag: false,
       sendData: {
         oidArray: [],
         numberArray: []
@@ -46,10 +60,17 @@ Page({
     let valueLength = value.length
     let cartDataLength = this.data.cartData.length
     if (valueLength === cartDataLength) {
+      this.chooseAllGoodsHandler()
       this.setData({
         'mainData.allCheck': true
       })
+    } else if (valueLength === 0) {
+      this.clearSendData()
+      this.setData({
+        'mainData.allCheck': false
+      })
     } else {
+      this.changeOneHandler(value)
       this.setData({
         'mainData.allCheck': false
       })
@@ -63,7 +84,13 @@ Page({
     let cartData = this.data.cartData
     let cartDataLength = cartData.length
     let nowNum
-    flag ? nowNum = 0 : nowNum = cartDataLength
+    if (flag) {//取消全选的逻辑
+      nowNum = 0
+      this.clearSendData()
+    } else {// 全选的逻辑
+      nowNum = cartDataLength
+      this.chooseAllGoodsHandler()
+    }
     cartData.forEach((item) => {
       item.check = !flag
     })
@@ -72,5 +99,68 @@ Page({
       'mainData.allCheck': !flag,
       'mainData.num': nowNum
     })
+  },
+  chooseAllGoodsHandler() {
+    let gidArray = []
+    let numArray = []
+    let totalPrice = 0
+    let cartData = this.data.cartData
+    cartData.forEach((item) => {
+      gidArray.push(item.id)
+      numArray.push(item.num)
+      totalPrice += parseInt(item.sale_price).toFixed(0) * parseInt(item.num)
+    })
+    totalPrice += '.00'
+    this.setData({
+      'mainData.totalPrice': totalPrice,
+      'mainData.sendData': {
+        oidArray: gidArray,
+        numberArray: numArray
+      }
+    })
+
+  },
+  changeOneHandler(value) {
+    let cartData = this.data.cartData
+    let gidArray = []
+    let numArray = []
+    let totalPrice = 0
+    value.forEach((gid) => {
+      cartData.forEach((item) => {
+        if (item.id === gid) {
+          gidArray.push(item.id)
+          numArray.push(item.num)
+          totalPrice += parseInt(item.sale_price).toFixed(0) * parseInt(item.num)
+        }
+      })
+    })
+    totalPrice += '.00'
+    this.setData({
+      'mainData.totalPrice': totalPrice,
+      'mainData.sendData': {
+        oidArray: gidArray,
+        numberArray: numArray
+      }
+    })
+  },
+  clearSendData() {
+    this.setData({
+      'mainData.sendData': {
+        oidArray: [],
+        numberArray: []
+      },
+      'mainData.totalPrice': 0
+    })
+
+  },
+  editHandler() {
+    let flag = this.data.mainData.editShowFlag
+    this.setData({
+      'mainData.editShowFlag': !flag,
+      'mainData.editShow': flag ? '' : 'show'
+    })
+  },
+  removeGoodHandler() {
+
   }
 })

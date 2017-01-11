@@ -24,7 +24,7 @@ Page({
         model_id: '2',
         check: false
       },
-       {
+      {
         id: '537',
         title: 'Adidas阿迪达斯女装短袖 2016夏新款透气运动 针织圆领T恤AZ9463',
         pic: 'http://img2.xyyzi.com/Upload/images/20160703/5778dedabbab1.jpg',
@@ -58,19 +58,38 @@ Page({
   checkboxChange(e) {
     let value = e.detail.value
     let valueLength = value.length
-    let cartDataLength = this.data.cartData.length
+    let cartData = this.data.cartData
+    let cartDataLength = cartData.length
     if (valueLength === cartDataLength) {
       this.chooseAllGoodsHandler()
+      cartData.forEach((item) => {
+        item.check = true
+      })
       this.setData({
         'mainData.allCheck': true
       })
     } else if (valueLength === 0) {
       this.clearSendData()
+      cartData.forEach((item) => {
+        item.check = false
+      })
       this.setData({
         'mainData.allCheck': false
       })
     } else {
       this.changeOneHandler(value)
+      value.forEach((gid) => {
+        cartData.forEach((item) => {
+          if (gid === item.id) {
+            item.check = true
+          } else {
+
+          }
+        })
+      })
+      cartData.forEach((item) => {
+        value.indexOf(item.id) >= 0 ? item.check = true : item.check = false
+      })
       this.setData({
         'mainData.allCheck': false
       })
@@ -84,7 +103,7 @@ Page({
     let cartData = this.data.cartData
     let cartDataLength = cartData.length
     let nowNum
-    if (flag) {//取消全选的逻辑
+    if (flag) {// 取消全选的逻辑
       nowNum = 0
       this.clearSendData()
     } else {// 全选的逻辑
@@ -151,7 +170,6 @@ Page({
       },
       'mainData.totalPrice': 0
     })
-
   },
   editHandler() {
     let flag = this.data.mainData.editShowFlag
@@ -159,6 +177,37 @@ Page({
       'mainData.editShowFlag': !flag,
       'mainData.editShow': flag ? '' : 'show'
     })
+  },
+  inputBlurHandler(e) {
+    let gid = e.target.dataset.gid
+    let value = parseInt(e.detail.value)
+    let cartData = this.data.cartData
+    cartData.forEach((item) => {
+      console.log(0 < value <= parseInt(item.stock_num))
+      if (item.id === gid && 0 < value && value <= parseInt(item.stock_num)) {
+        console.log('aaa')
+        item.num = value
+        this.setData({
+          'cartData': cartData
+        })
+      } else {
+        this.setData({
+          'cartData': cartData
+        })
+
+      }
+    })
+    console.log(e)
+  },
+  decreaseNum(e) {
+    let gid = e.target.dataset.gid
+    console.log(e)
+
+  },
+  addNum(e) {
+    let gid = e.target.dataset.gid
+    console.log(e)
+
   },
   removeGoodHandler() {
 

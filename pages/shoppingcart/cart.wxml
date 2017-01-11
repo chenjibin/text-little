@@ -28,11 +28,11 @@
           </view>
           <view class="toggle-box {{mainData.editShow}}">
             <view class="input-wrapper">
-              <text class="btn desrease">－</text>
+              <text class="btn desrease" bindtap="decreaseNum" data-gid="{{item.id}}">－</text>
               <label class="input-box">
-                <input type="text" value="{{item.num}}"/>
+                <input type="number" value="{{item.num}}" bindblur="inputBlurHandler" data-gid="{{item.id}}"/>
               </label>
-              <text class="btn add">＋</text>
+              <text class="btn add" bindtap="addNum" data-gid="{{item.id}}">＋</text>
             </view>
             <view class="remove-btn" bindtap="removeGoodHandler" data-gid="{{item.id}}">
               <text class="title">删除</text>

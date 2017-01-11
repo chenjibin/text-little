@@ -78,15 +78,6 @@ Page({
       })
     } else {
       this.changeOneHandler(value)
-      value.forEach((gid) => {
-        cartData.forEach((item) => {
-          if (gid === item.id) {
-            item.check = true
-          } else {
-
-          }
-        })
-      })
       cartData.forEach((item) => {
         value.indexOf(item.id) >= 0 ? item.check = true : item.check = false
       })

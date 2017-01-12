@@ -9,7 +9,7 @@
     "pages/shoppingcart/cart"
   ],
   "window":{
-    "backgroundTextStyle":"light",
+    "backgroundTextStyle":"dark",
     "navigationBarBackgroundColor": "#eee",
     "navigationBarTitleText": "幸运叶子商城",
     "navigationBarTextStyle":"black"

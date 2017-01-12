@@ -43,6 +43,16 @@
     </view>
   </checkbox-group>
 </view>
+<view class="guess-like-wrapper">
+  <view class="guess-like">
+   <text class="line"></text>
+   <view class="content">
+      <text class="fs-icon"></text>
+      <text class="title">猜你喜欢</text>
+   </view>
+   <text class="line"></text>
+  </view>
+</view>
 <view class="payBar-wrapper same-check">
   <label class="chooseAll-wrapper" bindtap="chooseAll">
     <checkbox checked="{{mainData.allCheck}}" class="choose-all" />

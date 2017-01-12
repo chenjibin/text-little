@@ -53,7 +53,63 @@ Page({
     console.log('bb')
   },
   onShow() {
+    console.log('cc')
+    this.onPullDownRefresh()
 
+  },
+  onPullDownRefresh() {
+    wx.stopPullDownRefresh()
+    this.setData({
+      cartData: [
+        {
+          id: '535',
+          title: 'Nike耐克男鞋2016夏季AIR zoom透气运动休闲跑步鞋749170-001',
+          pic: 'http://img2.xyyzi.com/Upload/images/20160708/577f57e901bc2.jpg',
+          item_id: '5915',
+          stock_num: '100',
+          sale_price: '549.00',
+          num: '1',
+          specification: '颜色:749170-001  鞋码:44/280',
+          model_id: '1',
+          check: false
+        }, {
+          id: '536',
+          title: 'Adidas阿迪达斯女装短袖 2016夏新款透气运动 针织圆领T恤AZ9463',
+          pic: 'http://img2.xyyzi.com/Upload/images/20160703/5778dedabbab1.jpg',
+          item_id: '6088',
+          stock_num: '9',
+          sale_price: '169.00',
+          num: '2',
+          specification: '颜色:AZ9463  尺码:M（165/88A）',
+          model_id: '2',
+          check: false
+        },
+        {
+          id: '537',
+          title: 'Adidas阿迪达斯女装短袖 2016夏新款透气运动 针织圆领T恤AZ9463',
+          pic: 'http://img2.xyyzi.com/Upload/images/20160703/5778dedabbab1.jpg',
+          item_id: '6088',
+          stock_num: '8',
+          sale_price: '169.00',
+          num: '3',
+          specification: '颜色:AZ9463  尺码:M（165/88A）',
+          model_id: '2',
+          check: false
+        }
+      ],
+      mainData: {
+        allCheck: false,
+        num: 0,
+        totalPrice: 0,
+        editShow: '',
+        editShowFlag: false,
+        sendData: {
+          oidArray: [],
+          numberArray: []
+        }
+      }
+
+    })
   },
   checkboxChange(e) {// 点击checkbox的处理函数
     let value = e.detail.value
@@ -190,7 +246,6 @@ Page({
         }
       }
     })
-
   },
   addNum(e) {
     let gid = e.target.dataset.gid
@@ -209,5 +264,17 @@ Page({
     })
   },
   removeGoodHandler() {
+  },
+  payHandler() {
+    wx.showModal({
+      title: '提示',
+      content: '请至少选择一件商品!',
+      success: function (res) {
+        if (res.confirm) {
+          console.log('用户点击确定')
+        }
+      }
+    })
+
   }
 })

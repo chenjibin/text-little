@@ -17,7 +17,7 @@ Page({
         title: 'Adidas阿迪达斯女装短袖 2016夏新款透气运动 针织圆领T恤AZ9463',
         pic: 'http://img2.xyyzi.com/Upload/images/20160703/5778dedabbab1.jpg',
         item_id: '6088',
-        stock_num: '2',
+        stock_num: '9',
         sale_price: '169.00',
         num: '2',
         specification: '颜色:AZ9463  尺码:M（165/88A）',
@@ -29,7 +29,7 @@ Page({
         title: 'Adidas阿迪达斯女装短袖 2016夏新款透气运动 针织圆领T恤AZ9463',
         pic: 'http://img2.xyyzi.com/Upload/images/20160703/5778dedabbab1.jpg',
         item_id: '6088',
-        stock_num: '2',
+        stock_num: '8',
         sale_price: '169.00',
         num: '3',
         specification: '颜色:AZ9463  尺码:M（165/88A）',
@@ -55,7 +55,7 @@ Page({
   onShow() {
 
   },
-  checkboxChange(e) {
+  checkboxChange(e) {// 点击checkbox的处理函数
     let value = e.detail.value
     let valueLength = value.length
     let cartData = this.data.cartData
@@ -78,9 +78,6 @@ Page({
       })
     } else {
       this.changeOneHandler(value)
-      cartData.forEach((item) => {
-        value.indexOf(item.id) >= 0 ? item.check = true : item.check = false
-      })
       this.setData({
         'mainData.allCheck': false
       })
@@ -89,7 +86,7 @@ Page({
       'mainData.num': valueLength
     })
   },
-  chooseAll() {
+  chooseAll() { //点击全选的处理函数
     let flag = this.data.mainData.allCheck
     let cartData = this.data.cartData
     let cartDataLength = cartData.length
@@ -111,47 +108,18 @@ Page({
     })
   },
   chooseAllGoodsHandler() {
-    let gidArray = []
-    let numArray = []
-    let totalPrice = 0
     let cartData = this.data.cartData
     cartData.forEach((item) => {
-      gidArray.push(item.id)
-      numArray.push(item.num)
-      totalPrice += parseInt(item.sale_price).toFixed(0) * parseInt(item.num)
+      item.check = true
     })
-    totalPrice += '.00'
-    this.setData({
-      'mainData.totalPrice': totalPrice,
-      'mainData.sendData': {
-        oidArray: gidArray,
-        numberArray: numArray
-      }
-    })
-
+    this.computedSendData(cartData)
   },
   changeOneHandler(value) {
     let cartData = this.data.cartData
-    let gidArray = []
-    let numArray = []
-    let totalPrice = 0
-    value.forEach((gid) => {
-      cartData.forEach((item) => {
-        if (item.id === gid) {
-          gidArray.push(item.id)
-          numArray.push(item.num)
-          totalPrice += parseInt(item.sale_price).toFixed(0) * parseInt(item.num)
-        }
-      })
+    cartData.forEach((item) => {
+      item.check = value.indexOf(item.id) >= 0 ? true : false
     })
-    totalPrice += '.00'
-    this.setData({
-      'mainData.totalPrice': totalPrice,
-      'mainData.sendData': {
-        oidArray: gidArray,
-        numberArray: numArray
-      }
-    })
+    this.computedSendData(cartData)
   },
   clearSendData() {
     this.setData({
@@ -169,38 +137,77 @@ Page({
       'mainData.editShow': flag ? '' : 'show'
     })
   },
-  inputBlurHandler(e) {
+  inputBlurHandler(e) { // 在inpu输入框失去焦点时的处理函数
     let gid = e.target.dataset.gid
     let value = parseInt(e.detail.value)
     let cartData = this.data.cartData
     cartData.forEach((item) => {
-      console.log(0 < value <= parseInt(item.stock_num))
       if (item.id === gid && 0 < value && value <= parseInt(item.stock_num)) {
-        console.log('aaa')
         item.num = value
         this.setData({
           'cartData': cartData
         })
+        if (item.check) this.computedSendData(cartData)
       } else {
         this.setData({
           'cartData': cartData
         })
-
       }
     })
-    console.log(e)
+  },
+  computedSendData(cartData) {// 计算需要发送的数据
+    let gidArray = []
+    let numArray = []
+    let totalPrice = 0
+    cartData.forEach((newitem) => {
+      if (newitem.check) {
+        gidArray.push(newitem.id)
+        numArray.push(newitem.num)
+        totalPrice += parseInt(newitem.sale_price).toFixed(0) * parseInt(newitem.num)
+      }
+    })
+    totalPrice += '.00'
+    this.setData({
+      'mainData.totalPrice': totalPrice,
+      'mainData.sendData': {
+        oidArray: gidArray,
+        numberArray: numArray
+      }
+    })
   },
   decreaseNum(e) {
     let gid = e.target.dataset.gid
-    console.log(e)
+    let cartData = this.data.cartData
+    cartData.forEach((item) => {
+      if (item.id === gid) {
+        let newNum = parseInt(item.num) - 1
+        if (newNum > 0) {
+          item.num = newNum
+          if (item.check) this.computedSendData(cartData)
+          this.setData({
+            'cartData': cartData
+          })
+        }
+      }
+    })
 
   },
   addNum(e) {
     let gid = e.target.dataset.gid
-    console.log(e)
-
+    let cartData = this.data.cartData
+    cartData.forEach((item) => {
+      if (item.id === gid) {
+        let newNum = parseInt(item.num) + 1
+        if (!(newNum > parseInt(item.stock_num))) {
+          item.num = newNum
+          if (item.check) this.computedSendData(cartData)
+          this.setData({
+            'cartData': cartData
+          })
+        }
+      }
+    })
   },
   removeGoodHandler() {
-
   }
 })

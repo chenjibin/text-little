@@ -37,6 +37,36 @@ Page({
         check: false
       }
     ],
+    mockGoods: [
+      {
+        gid: '6658',
+        pic: 'http://img2.xyyzi.com/Upload/images/20160828/57c28da55b6b5.jpg?style=200x200',
+        title: '【淘得6】Adidas阿迪达斯男鞋 2016新款训练鞋耐磨竞技网球鞋运动鞋AQ2279',
+        nprice: '346.00',
+        oprice: '499.00'
+      },
+      {
+        gid: '6658',
+        pic: 'http://img2.xyyzi.com/Upload/images/20160828/57c28da55b6b5.jpg?style=200x200',
+        title: '【淘得6】Adidas阿迪达斯男鞋 2016新款训练鞋耐磨竞技网球鞋运动鞋AQ2279',
+        nprice: '346.00',
+        oprice: '499.00'
+      },
+      {
+        gid: '6658',
+        pic: 'http://img2.xyyzi.com/Upload/images/20160828/57c28da55b6b5.jpg?style=200x200',
+        title: '【淘得6】Adidas阿迪达斯男鞋 2016新款训练鞋耐磨竞技网球鞋运动鞋AQ2279',
+        nprice: '346.00',
+        oprice: '499.00'
+      },
+      {
+        gid: '6658',
+        pic: 'http://img2.xyyzi.com/Upload/images/20160828/57c28da55b6b5.jpg?style=200x200',
+        title: '【淘得6】Adidas阿迪达斯男鞋 2016新款训练鞋耐磨竞技网球鞋运动鞋AQ2279',
+        nprice: '346.00',
+        oprice: '499.00'
+      }
+    ],
     mainData: {
       allCheck: false,
       num: 0,
@@ -266,15 +296,23 @@ Page({
   removeGoodHandler() {
   },
   payHandler() {
-    wx.showModal({
-      title: '提示',
-      content: '请至少选择一件商品!',
-      success: function (res) {
-        if (res.confirm) {
-          console.log('用户点击确定')
+    let sendData = this.data.mainData.sendData
+    let goodLength = sendData.oidArray.length
+    if (goodLength) {
+      wx.navigateTo({
+        url: '../trade/confirm'
+      })
+    } else {
+      wx.showModal({
+        title: '提示',
+        content: '请至少选择一件商品!',
+        success: function (res) {
+          if (res.confirm) {
+            console.log('用户点击确定')
+          }
         }
-      }
-    })
+      })
 
+    }
   }
 })

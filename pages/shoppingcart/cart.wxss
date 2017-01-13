@@ -201,6 +201,7 @@
   border-bottom: 1rpx solid #ddd;
   border-top: 1rpx solid #ddd;
   box-sizing: border-box;
+  background-color: #fff;
 }
 
 .payBar-wrapper .chooseAll-wrapper {
@@ -245,12 +246,14 @@
 }
 
 .guess-like-wrapper {
-  width: 90%;
-  margin: 20px auto 0 auto;
   padding-bottom: 50px;
+  padding-top: 50px;
+  background-color: #f8f8f8;
 }
 
 .guess-like-wrapper .guess-like {
+  width: 90%;
+  margin: 0 auto;
   display: flex;
 }
 
@@ -293,4 +296,66 @@
   vertical-align: middle;
   color: #999;
   font-size: 15px;
+}
+
+.guess-like-wrapper .guess-goods {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.guess-like-wrapper .guess-goods .each-good {
+  flex: 0 0 50%;
+  width: 50%;
+  background-color: #fff;
+  box-sizing: border-box;
+  margin-bottom: 4px;
+}
+.guess-like-wrapper .guess-goods .each-good:nth-of-type(odd) {
+  border-right: 2px solid #f8f8f8;
+
+}
+.guess-like-wrapper .guess-goods .each-good:nth-of-type(even) {
+  border-left: 2px solid #f8f8f8;
+
+}
+.guess-like-wrapper .guess-goods .each-good .pic-wrapper {
+}
+
+.guess-like-wrapper .guess-goods .each-good .pic-wrapper image {
+  max-width: 100%;
+  height: 372rpx;
+}
+
+.guess-like-wrapper .guess-goods .each-good .content {
+}
+
+.guess-like-wrapper .guess-goods .each-good .content .title {
+  display: -webkit-box;
+  padding: 0 10rpx;
+  line-height: 14px;
+  height: 27px;
+  -webkit-line-clamp: 2;
+  text-overflow: ellipsis;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  font-size: 12px;
+  color: #666;
+  
+}
+
+.guess-like-wrapper .guess-goods .each-good .content .old-price {
+  float: right;
+  margin: 5px 6px 0 6px;
+  font-family: 'Anton';
+  color: #999;
+  text-decoration: line-through;
+  font-size: 14px;
+  vertical-align: bottom;
+}
+
+.guess-like-wrapper .guess-goods .each-good .content .new-price {
+  float: right;
+  font-family: 'Anton';
+  font-size: 18px;
 }

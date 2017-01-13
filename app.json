@@ -6,7 +6,8 @@
     "pages/my/myIndex",
     "pages/goods/detail",
     "pages/goods/list",
-    "pages/shoppingcart/cart"
+    "pages/shoppingcart/cart",
+    "pages/trade/confirm"
   ],
   "window":{
     "backgroundTextStyle":"dark",

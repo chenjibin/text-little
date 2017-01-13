@@ -345,8 +345,7 @@
   float: right;
 }
 
-.shoppingcart-wrapper .choosenum-wrapper .num-wrapper .decrease {
-}
+
 
 .shoppingcart-wrapper .choosenum-wrapper .num-wrapper .btn {
   display: inline-block;
@@ -362,8 +361,7 @@
   color: #999;
 }
 
-.shoppingcart-wrapper .choosenum-wrapper .num-wrapper .add {
-}
+
 
 .shoppingcart-wrapper .choosenum-wrapper .num-wrapper label {
   display: inline-block;

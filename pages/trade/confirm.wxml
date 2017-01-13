@@ -3,24 +3,48 @@
     <view class="address-content">
       <text class="fs-icon address"></text>
       <view class="content clearfix">
-        <text class="person">收货人: {{serverData.addressInfo.person}}</text>
-        <text class="phone">{{serverData.addressInfo.mobile}}</text>
-        <text class="address">{{serverData.addressInfo.address}}</text>
+        <view class="clearfix">
+          <text class="person">收货人: {{serverData.addressInfo.person}}</text>
+          <text class="phone">{{serverData.addressInfo.mobile}}</text>
+        </view>
+        <text class="address">收货地址:{{serverData.addressInfo.address}}</text>
       </view>
     </view>
   </view>
-  <view class="section">
-    <view class="section__title">地区选择器</view>
-    <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
-      <view class="picker">
-        当前选择：{{array[index]}}
+  <view class="main-content">
+    <view class="store-name-wrapper">
+      <text class="store-name">幸运叶子官方</text>
+    </view>
+    <view class="goodInfo" wx:for="{{serverData.goodInfo}}">
+      <view class="pic-wrapper">
+        <image src="{{item.pic}}" class="pic"></image>
+      </view>
+      <view class="content">
+        <text class="title">{{item.title}}</text>
+        <text class="property">{{item.property}}</text>
+        <view class="price-wrapper clearfix">
+          <text class="price">¥{{item.price}}</text>
+          <text class="num">x{{item.num}}</text>
+        </view>
+      </view>
+    </view>
+    <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}" class="select-item">
+      <view class="item-wrapper clearfix">
+        <text class="title">优惠方式:</text>
+        <text class="result">{{array[index]}} </text>
+      </view>
+    </picker>
+    <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}" class="select-item">
+      <view class="item-wrapper clearfix">
+        <text class="title">配送方式:</text>
+        <text class="result">{{array[index]}} </text>
       </view>
     </picker>
   </view>
 </view>
 <view class="payBar-wrapper">
   <view class="content">
-    <text class="money">¥{{mainData.totalPrice}}</text>
+    <text class="money">¥{{serverData.totalPrice}}</text>
     <text class="heji">合计:</text>
   </view>
   <view class="pay-btn" bindtap="payHandler">

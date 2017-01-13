@@ -299,7 +299,7 @@ Page({
     let sendData = this.data.mainData.sendData
     let goodLength = sendData.oidArray.length
     if (goodLength) {
-      wx.navigateTo({
+      wx.redirectTo({
         url: '../trade/confirm'
       })
     } else {

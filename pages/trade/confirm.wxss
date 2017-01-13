@@ -1,46 +1,122 @@
 .mian-content-wrapper {
+  background-color: #f8f8f8;
 }
 
 .mian-content-wrapper .address-wrapper {
   width: 100%;
-  background: repeating-linear-gradient(135deg, #fb3, #fb3 20px, #fff 0, #fff 30px,#58a 0,#58a 50px, #fff 0, #fff 60px);
+  background: repeating-linear-gradient(135deg, #fb3, #fb3 20px, #fff 0, #fff 30px, #58a 0, #58a 50px, #fff 0, #fff 60px);
   padding-bottom: 6px;
   border-bottom: 1rpx solid #ddd;
 }
 
 .mian-content-wrapper .address-wrapper .address-content {
   display: flex;
-  padding-top: 10px;
   background-color: #fff;
   border-bottom: 1rpx solid #ddd;
 }
 
 .mian-content-wrapper .address-wrapper .address-content .fs-icon {
-  flex:0 0 30px;
+  flex: 0 0 30px;
 }
 
 .mian-content-wrapper .address-wrapper .address-content .content {
-  flex:1;
-  position: relative;
-  padding-right: 20px;
+  flex: 1;
+  padding: 12px 20px 12px 0;
 }
 
 .mian-content-wrapper .address-wrapper .address-content .content .person {
- 
-
+  float: left;
 }
 
 .mian-content-wrapper .address-wrapper .address-content .content .phone {
-  position: absolute;
-  right: 20px;
- 
-  
+  float: right;
 }
 
 .mian-content-wrapper .address-wrapper .address-content .content .address {
   display: block;
   width: 100%;
+  line-height: 14px;
+  margin-top: 6px;
+}
 
+.mian-content-wrapper .main-content .store-name-wrapper {
+  height: 30px;
+  line-height: 30px;
+  padding-left: 12px;
+  background-color: #fff;
+}
+
+.mian-content-wrapper .main-content .store-name {
+  font-size: 14px;
+}
+
+.mian-content-wrapper .main-content .goodInfo {
+  display: flex;
+  padding: 12px;
+}
+
+.mian-content-wrapper .main-content .goodInfo .pic-wrapper {
+  flex: 0 0 75px;
+}
+
+.mian-content-wrapper .main-content .goodInfo .pic-wrapper .pic {
+  width: 75px;
+  height: 75px;
+}
+
+.mian-content-wrapper .main-content .goodInfo .content {
+  flex: 1;
+  padding-left: 12px;
+}
+
+.mian-content-wrapper .main-content .goodInfo .content .title {
+  display: block;
+  line-height: 14px;
+}
+
+.mian-content-wrapper .main-content .goodInfo .content .property {
+  display: block;
+  line-height: 14px;
+  margin-top: 8px;
+}
+
+.mian-content-wrapper .main-content .goodInfo .content .price-wrapper {
+  line-height: 16px;
+  margin-top: 8px;
+}
+
+.mian-content-wrapper .main-content .goodInfo .content .price {
+  float: left;
+  font-size: 14px;
+  color: #dc0707;
+}
+
+.mian-content-wrapper .main-content .goodInfo .content .num {
+  float: right;
+  font-size: 14px;
+}
+
+.mian-content-wrapper .select-item {
+  padding: 0 12px;
+  background-color: #fff;
+}
+
+.mian-content-wrapper .select-item .item-wrapper {
+  padding: 8px 0;
+  border-bottom: 1rpx solid #ddd;
+}
+
+.mian-content-wrapper .select-item .item-wrapper text {
+  font-size: 14px;
+}
+
+.mian-content-wrapper .select-item .item-wrapper .title {
+  float: left;
+}
+
+.mian-content-wrapper .select-item .item-wrapper .result {
+  float: right;
+  margin-right: 20px;
 }
 
 .payBar-wrapper {

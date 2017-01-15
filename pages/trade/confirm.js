@@ -20,7 +20,7 @@ Page({
                     property: '颜色:AZ9463  尺码:M（165/88A）'
                 }
             ],
-            totalPrice:'169.00'
+            totalPrice: '169.00'
         }
     },
     onLoad() {
@@ -31,4 +31,19 @@ Page({
             index: e.detail.value
         })
     },
+    payHandler() {
+        console.log('aaa')
+        wx.requestPayment({
+            'timeStamp': '',
+            'nonceStr': '',
+            'package': '',
+            'signType': 'MD5',
+            'paySign': '',
+            'success': function (res) {
+            },
+            'fail': function (res) {
+            }
+        })
+
+    }
 })

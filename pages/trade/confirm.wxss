@@ -16,12 +16,16 @@
 }
 
 .mian-content-wrapper .address-wrapper .address-content .fs-icon {
-  flex: 0 0 30px;
+  flex: 0 0 40px;
+  width: 40px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 20px 20px;
 }
 
 .mian-content-wrapper .address-wrapper .address-content .content {
   flex: 1;
-  padding: 12px 20px 12px 0;
+  padding: 12px 28px 12px 0;
 }
 
 .mian-content-wrapper .address-wrapper .address-content .content .person {
@@ -102,7 +106,7 @@
 }
 
 .mian-content-wrapper .select-item .item-wrapper {
-  padding: 8px 0;
+  padding: 10px 0;
   border-bottom: 1rpx solid #ddd;
 }
 
@@ -117,6 +121,34 @@
 .mian-content-wrapper .select-item .item-wrapper .result {
   float: right;
   margin-right: 20px;
+}
+
+.mian-content-wrapper .message-wrapper {
+  padding: 0 12px;
+ 
+   background-color: #fff;
+}
+
+.mian-content-wrapper .message {
+  display: flex;
+  width: 100%;
+  height: 37px;
+  line-height: 37px;
+  box-sizing: border-box;
+   border-bottom: 1rpx solid #ddd;
+}
+
+.mian-content-wrapper .message .title {
+  flex: 0 0 65px;
+  width: 65px;
+  font-size: 14px;
+}
+
+.mian-content-wrapper .message .input-area {
+  flex: 1;
+  height: 36px;
+  font-size: 14px;
+ 
 }
 
 .payBar-wrapper {

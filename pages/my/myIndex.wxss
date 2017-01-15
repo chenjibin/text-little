@@ -1,3 +1,86 @@
-.slide-image {
-    width: 100%;
+page {
+  height: 100%;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  background-color: #f8f8f8;
+}
+
+.user-info-wrapper {
+  text-align: center;
+  padding: 20px 0;
+  background: radial-gradient(#000065, #df287e, #000065);
+}
+
+.user-info-wrapper .user-pic {
+  width: 75px;
+  height: 75px;
+  margin: 0 auto;
+  padding: 4px;
+  background-color: #ff835c;
+  border-radius: 50%;
+}
+
+.user-info-wrapper .user-pic .pic {
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+}
+
+.user-info-wrapper .user-name-wrapper {
+}
+
+.user-info-wrapper .user-name-wrapper .user-name {
+  font-size: 16px;
+  color: #fff;
+}
+
+.text-btn {
+  height: 42px;
+  line-height: 42px;
+  padding-left: 12px;
+  margin-top: 10px;
+  position: relative;
+  background-color: #fff;
+}
+
+.text-btn text {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.text-btn .title {
+  font-size: 14px;
+}
+
+.text-btn .sub-title {
+  position: absolute;
+  right: 26px;
+  color: #999;
+}
+.text-btn .sub-title.right-arrow-2px::after {
+    border-top:2px solid #ddd;
+    border-right: 2px solid #ddd;
+    top: 16px;
+}
+.text-btn.single {
+  margin-top: 10px;
+}
+
+.myorder-wrapper {
+  margin-top: 10px;
+  background-color: #fff;
+}
+
+.myorder-wrapper .order-item-wrapper {
+  display: flex;
+  text-align: center;
+  border-top:1rpx solid #ddd;
+}
+
+.myorder-wrapper .order-item-wrapper .order-item {
+  flex: 0 0 20%;
+  box-sizing: border-box;
 }

@@ -122,7 +122,7 @@ Page({
             flag: true
         },
         mainData: {
-            btnState:'',
+            btnState: '',
             desc: '请选择',
             stateArr: [],
             stock: '933',
@@ -285,7 +285,7 @@ Page({
         console.log(event.target.dataset)
 
         this.setData({
-            'mainData.btnState':btnState,
+            'mainData.btnState': btnState,
             showBox: {
                 cartClass: 'show',
                 flag: false
@@ -297,19 +297,30 @@ Page({
             })
         }, 10)
     },
-
     addToCart() {
-        console.log(this.data.mainData.sendData)
+        let sendData = this.data.mainData.sendData
+        if (sendData.cate && sendData.size) {
+            wx.switchTab({
+                url: '../shoppingcart/cart'
+            })
+        }
+    },
+    buyNow() {
+        let sendData = this.data.mainData.sendData
+        if (sendData.cate && sendData.size) {
+            wx.navigateTo({
+              url: '../trade/confirm'
+            })
+        }
     },
     toHome() {
         wx.switchTab({
-             url: '../index/index'
+            url: '../index/index'
         })
-
     },
-     toCart() {
+    toCart() {
         wx.switchTab({
-             url: '../shoppingcart/cart'
+            url: '../shoppingcart/cart'
         })
 
     },

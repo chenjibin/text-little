@@ -1,22 +1,59 @@
-<swiper indicator-dots="{{indicatorDots}}"
-  autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
-  <block wx:for="{{imgUrls}}" >
-    <swiper-item>
-    <navigator url="../index/index" open-type="switchTab">
-      <image src="{{item}}" class="slide-image"/>
-      </navigator>
-    </swiper-item>
-  </block>
-</swiper>
 <view class="container">
-  <view  bindtap="bindViewTap" class="userinfo">
-    <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
-    <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+  <view class="user-info-wrapper">
+    <view class="user-pic">
+      <image src="{{userInfo.avatarUrl}}" class="pic"></image>
+    </view>
+    <view class="user-name-wrapper">
+      <text class="user-name">{{userInfo.nickName}}</text>
+    </view>
   </view>
-  <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
+  <view class="myorder-wrapper">
+    <view class="text-btn">
+      <text class="fs-icon"></text>
+      <text class="title">我的订单</text>
+      <text class="sub-title right-arrow-2px">查看我的订单</text>
+    </view>
+    <view class="order-item-wrapper">
+      <view class="order-item">
+        <text class="fs-icon wait-pay"></text>
+        <text class="title">待付款</text>
+        <text class="num"></text>
+      </view>
+      <view class="order-item">
+        <text class="fs-icon wait-send"></text>
+        <text class="title">待发货</text>
+        <text class="num"></text>
+      </view>
+      <view class="order-item">
+        <text class="fs-icon wait-accept"></text>
+        <text class="title">待收货</text>
+        <text class="num"></text>
+      </view>
+      <view class="order-item">
+        <text class="fs-icon wait-comment"></text>
+        <text class="title">待评价</text>
+        <text class="num"></text>
+      </view>
+      <view class="order-item">
+        <text class="fs-icon shouhou"></text>
+        <text class="title">退款/售后</text>
+        <text class="num"></text>
+      </view>
+    </view>
   </view>
-  <view class="fs-button-group">
-    <button class="button-item" bindtap="toIndex">点击进入我的首页</button>
+  <view class="text-btn single">
+    <text class="fs-icon"></text>
+    <text class="title">收藏夹</text>
+    <text class="sub-title right-arrow-2px">进入收藏夹</text>
+  </view>
+  <view class="text-btn single">
+    <text class="fs-icon"></text>
+    <text class="title">优惠券</text>
+    <text class="sub-title right-arrow-2px">查看优惠券</text>
+  </view>
+  <view class="text-btn single">
+    <text class="fs-icon"></text>
+    <text class="title">收货地址</text>
+    <text class="sub-title right-arrow-2px">管理收货地址</text>
   </view>
 </view>

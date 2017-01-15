@@ -7,7 +7,7 @@
           <text class="person">收货人: {{serverData.addressInfo.person}}</text>
           <text class="phone">{{serverData.addressInfo.mobile}}</text>
         </view>
-        <text class="address">收货地址:{{serverData.addressInfo.address}}</text>
+        <text class="address right-arrow">收货地址:{{serverData.addressInfo.address}}</text>
       </view>
     </view>
   </view>
@@ -31,15 +31,21 @@
     <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}" class="select-item">
       <view class="item-wrapper clearfix">
         <text class="title">优惠方式:</text>
-        <text class="result">{{array[index]}} </text>
+        <text class="result right-arrow-2px">{{array[index]}} </text>
       </view>
     </picker>
     <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}" class="select-item">
       <view class="item-wrapper clearfix">
         <text class="title">配送方式:</text>
-        <text class="result">{{array[index]}} </text>
+        <text class="result right-arrow-2px">{{array[index]}} </text>
       </view>
     </picker>
+    <view class="message-wrapper">
+      <label class="message">
+        <text class="title">买家留言:</text>
+        <input type="text" class="input-area" placeholder="选填:对本次交易的说明" />
+      </label>
+    </view>
   </view>
 </view>
 <view class="payBar-wrapper">

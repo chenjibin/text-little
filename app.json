@@ -7,7 +7,8 @@
     "pages/goods/detail",
     "pages/goods/list",
     "pages/shoppingcart/cart",
-    "pages/trade/confirm"
+    "pages/trade/confirm",
+    "pages/address/list"
   ],
   "window":{
     "backgroundTextStyle":"dark",

@@ -60,11 +60,13 @@ page {
   right: 26px;
   color: #999;
 }
+
 .text-btn .sub-title.right-arrow-2px::after {
-    border-top:2px solid #ddd;
-    border-right: 2px solid #ddd;
-    top: 16px;
+  border-top: 2px solid #ddd;
+  border-right: 2px solid #ddd;
+  top: 16px;
 }
+
 .text-btn.single {
   margin-top: 10px;
 }
@@ -77,10 +79,43 @@ page {
 .myorder-wrapper .order-item-wrapper {
   display: flex;
   text-align: center;
-  border-top:1rpx solid #ddd;
+  border-top: 1rpx solid #ddd;
 }
 
 .myorder-wrapper .order-item-wrapper .order-item {
   flex: 0 0 20%;
+  position: relative;
+  padding: 6px 0;
   box-sizing: border-box;
+  font-size: 0;
+}
+
+.myorder-wrapper .order-item-wrapper .order-item .fs-icon {
+  display: block;
+  margin: 0 auto;
+  width: 28px;
+  height: 28px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 80%;
+}
+
+.myorder-wrapper .order-item-wrapper .order-item .title {
+  font-size: 10px;
+  font-weight: 200;
+}
+
+.myorder-wrapper .order-item-wrapper .order-item .num {
+  position: absolute;
+  right: 28%;
+  top: 8px;
+  width: 14px;
+  height: 14px;
+  line-height: 13px;
+  font-size: 10px;
+  border-radius: 50%;
+  background-color: #ff4500;
+  color: #fff;
+  text-align: center;
+  font-weight: 700;
 }

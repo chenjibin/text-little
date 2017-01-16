@@ -7,7 +7,7 @@
           <text class="person">收货人: {{serverData.addressInfo.person}}</text>
           <text class="phone">{{serverData.addressInfo.mobile}}</text>
         </view>
-        <text class="address right-arrow">收货地址:{{serverData.addressInfo.address}}</text>
+        <text class="address right-arrow-2px">收货地址:{{serverData.addressInfo.address}}</text>
       </view>
     </view>
   </view>

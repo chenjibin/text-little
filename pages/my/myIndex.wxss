@@ -40,10 +40,12 @@ page {
 .text-btn {
   height: 42px;
   line-height: 42px;
-  padding-left: 12px;
   margin-top: 10px;
   position: relative;
   background-color: #fff;
+}
+.text-btn navigator {
+  padding-left: 12px;
 }
 
 .text-btn text {

@@ -1,0 +1,27 @@
+<view class="address-list-wrapper">
+  <radio-group class="address-list" bindchange="chooseDefaultHandler">
+    <view class="list-item" wx:for="{{serverData.addressData}}">
+      <view class="content">
+        <view class="top-area clearfix">
+          <text class="name">{{item.name}}</text>
+          <text class="phone">{{item.mobile}}</text>
+        </view>
+        <view class="address-wrapper">
+          <text class="address">{{item.address}}</text>
+        </view>
+      </view>
+      <view class="tool-bar">
+        <label class="choose-radio">
+          <radio value="{{item.id}}" checked="{{item.id === serverData.defaultAddress}}">
+          </radio>
+          <text class="title">{{item.id === serverData.defaultAddress? '默认地址' : '设为默认'}}</text>
+        </label>
+        <text class="btn remove" data-id="{{item.id}}" bindtap="removeAddress">删除</text>
+        <text class="btn edit" data-id="{{item.id}}" bindtap="editAddress">编辑</text>
+      </view>
+    </view>
+  </radio-group>
+</view>
+<navigator url="./add" class="add-new">
+  <text>添加新地址</text>
+</navigator>

@@ -1,0 +1,109 @@
+page {
+  height: 100%;
+  background-color: #f8f8f8;
+}
+
+.address-list-wrapper .wx-radio-input-checked {
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAEgElEQVR4Xu2b3VHbQBDHd2UsPcapIDAjPwcqwKkAqACoIFBBSAWQCoAKgApiKoA844xNBZhHn/Ft5iR5sK2v+5SUMZrxk6W7/f9ub7W3d0JY8wvXXD98APjwgAoIDNvtbe55u0TUA8QOAPQKuu0D0RgR+x7n91vT6aNLE51NgSff30OAfRC/WLTeRTQGgFvi/Lr79tbXayT/KesABu32IXjeGQBs2jYWAEbA+Vk4nV7batsagEg44oXRaMursgbCGICY3zPPOy+Z1/LS1O7stzg/NYkTRgAG7fYRIJ5XNOrZaESMIDoNp9MrNXbx3doABr5/CYhHOp06eYboKmTsWLVtZQBDgM4sFi8ifLMuDQjKAJ58/wERt5ulfMEaotuQsQNZ+5QANM7t81QqeII0gCffP0PEH7Jk676PiH52GRP5SOElBeBpY6OHrdbvssaa9j/NZt/KssdSAEnQG9b6qtMlSzRuMba1BSDS6cyrFMCg3b4Az/uua0Ptz3H+K5xOT7QAJFneQ+0iDA1oTSbCC0ZZzRR6wMD3bwFxz7B/N48T3RHAI8bJ2JfCToiuQ8Yyk7ZcAEOAzVkQDN1Yb9gq58eLqa/MQOV5QS6Age9fAeKhoan2H18RLzqQekvlxIIiAC+Ni/wZ4qUBEI1Dxj6vjkgmgGiV53mX9ofPoMUc8aLFge/fSK1NiA5Cxm4XrcgG0DT3LxYvvyrNmAbZAOLg56Kkpe4CtsQDABE9dhnbKfSAKPMLghd1Sx08YVH83LpwMlka9JQHSEVUB1pTTToQL/pYXR+kAPwNghMCEDW++i5H4iNBK22nPUB92ftMIs0k6iDiV2NqLsXHcWBpmWwEgADuNyaT/flqy9h7HIuPpkAZAJUMMGu9rZ1DVCDeOoAW5ztZNXllCBWJlwKgUvoqKjtJQ6hQvHUAWVF1MQiWQqhYvBQArUBWJCRvXVGDeLnXoG4BVAVCXeJlEiGjVFgGQo3ihQeUpsLR8jIIRP2suMyUl/EUCBRVprzaXBWbLkT0p8vY0q6Wm+VwAYQsblWIT+Z/qkKcB0Aca7kxSmslIVQmPn4FyBVEkirLGBA/uYRQsfjXkLHUWSX3RdEcT6hUfLwKzNwgqaYsni5jy5exjFzw/WHlsngyDWyWxvtI1Kd4I6PacpvOxogAsPZbY5EX/Oebo2XnBEp3h5Pt8ZHxG8HSXFZs5rk1mWwbbY+LDhtTKFVUb+WAxLxPlTqBop1Obi9z/XmnpVNgaX3ftB2jPHQFUX/1ESUA0XQIgj4C7DoZNhuNEt2FjEmfYVQGkARFcSi6eVvnCiOvNQUaPR00xAs9yh6wBCE+LC28wWzRZOL6RK9AdFL5Yem5zSJbfPO8izriQrIxc5RXZJHhauQBKW+IvxTRqyTJWPt+z3Py5YjWEfnFrqwBmDealMJdgbAm3DgIlg1YlD16nlj5ieqSfowQczz+aOqq7NhrmU1Z/1v3gKxOks/meuKzOULsFMULMa+RaISIjx7nfZPPYWSAVAJAxpC67vkAUBf5pvS79h7wD+/WtF8crDrcAAAAAElFTkSuQmCC");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  border: 1rpx solid #dc0707;
+}
+
+.address-list-wrapper .wx-radio-input {
+  width: 18px;
+  height: 18px;
+  border: 1rpx solid #ddd !important;
+}
+
+.address-list-wrapper .wx-radio-input.wx-radio-input-checked {
+  border: 1rpx solid #dc0707 !important;
+  background-color: #fff !important;
+}
+
+.address-list-wrapper .wx-radio-input.wx-radio-input-checked::before {
+  content: '';
+}
+
+.address-list-wrapper {
+  padding-bottom: 50px;
+}
+
+.address-list-wrapper .address-list {
+}
+
+.address-list-wrapper .address-list .list-item {
+  background-color: #fff;
+  margin-bottom: 10px;
+}
+
+.address-list-wrapper .address-list .list-item .content {
+  border-bottom: 1rpx solid #ddd;
+  padding: 12px;
+}
+
+.address-list-wrapper .address-list .list-item .top-area {
+}
+
+.address-list-wrapper .address-list .list-item .address-wrapper {
+  line-height: 16px;
+}
+
+.address-list-wrapper .address-list .list-item .top-area .name {
+  font-size: 14px;
+  float: left;
+}
+
+.address-list-wrapper .address-list .list-item .top-area .phone {
+  font-size: 14px;
+  float: right;
+}
+
+.address-list-wrapper .address-list .list-item .content .address {
+  line-height: 12px;
+  font-size: 14px;
+}
+
+.address-list-wrapper .address-list .list-item .tool-bar {
+  height: 24px;
+  line-height: 24px;
+  padding: 12px;
+}
+
+.address-list-wrapper .address-list .list-item .tool-bar .choose-radio {
+}
+
+.address-list-wrapper .address-list .list-item .tool-bar .choose-radio radio {
+}
+
+.address-list-wrapper .address-list .list-item .tool-bar .choose-radio .title {
+}
+
+.address-list-wrapper .address-list .list-item .tool-bar .btn {
+  float: right;
+  border: 1rpx solid #ddd;
+  width: 50px;
+  height: 24px;
+  text-align: center;
+  border-radius: 10px;
+}
+
+.address-list-wrapper .address-list .list-item .tool-bar .edit {
+  margin-right: 6px;
+}
+
+.add-new {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 50px;
+  line-height: 50px;
+  background-color: #ff4500;
+  text-align: center;
+}
+.add-new text {
+  font-size: 14px;
+  color: #fff;
+}

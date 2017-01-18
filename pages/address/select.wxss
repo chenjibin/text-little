@@ -1,0 +1,33 @@
+page{
+    height: 100%;
+    background-color: #f8f8f8;
+}
+
+.address-item {
+    display: block;
+    padding: 12px;
+    border-bottom: 1rpx solid #ddd;
+    background-color: #fff;
+}
+.address-item view {
+    line-height: 16px;
+}
+.address-item text {
+    font-size: 14px;
+}
+.address-item radio {
+    display: none;
+}
+.address-item .head-area {
+    display: flex;
+}
+.address-item .head-area .name {
+    flex: 1;
+}
+.address-item .address-wrapper {
+    margin-top: 4px;
+}
+
+.address-item .address-wrapper .default {
+    color: #ff4500;
+}

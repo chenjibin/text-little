@@ -1,0 +1,17 @@
+<view class="sa-wrapper">
+  <radio-group class="fs-radio-group" bindchange="selectAddress">
+    <label wx:for="{{serverData.addressData}}" class="address-item">
+      <radio value="{{item.id}}"></radio>
+      <view class="content">
+        <view class="head-area">
+          <text class="name">{{item.name}}</text>
+          <text class="mobile">{{item.mobile}}</text>
+        </view>
+        <view class="address-wrapper">
+          <text class="default" wx:if="{{item.id === serverData.defaultAddress}}">[默认地址]</text>
+          <text class="address">{{item.address}}</text>
+        </view>
+      </view>
+    </label>
+  </radio-group>
+</view>

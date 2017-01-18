@@ -1,0 +1,74 @@
+page {
+  position: relative;
+  height: 100%;
+  background-color: #f8f8f8;
+}
+
+.save-btn {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  height: 50px;
+  width: 100%;
+  background-color: #fff;
+  border-radius: 0 !important;
+}
+
+.save-btn::after {
+  border: 0;
+  border-top: 1rpx solid #999;
+  border-radius: 0;
+}
+
+.form-wrapper .each-item {
+  background-color: #fff;
+  color: #666;
+  border-bottom: 1rpx solid #ddd;
+}
+
+.form-wrapper .each-item.fs-input, 
+.form-wrapper .each-item.fs-switch,
+.form-wrapper .each-item.fs-picker {
+  display: flex;
+  height: 50px;
+  line-height: 50px;
+  padding: 0 12px;
+}
+.form-wrapper .each-item.fs-picker .area {
+    font-size: 14px;
+}
+.form-wrapper .each-item.fs-picker .title {
+    flex: 1;
+}
+.form-wrapper .each-item.fs-switch .title {
+  flex: 1;
+}
+
+.form-wrapper .each-item.fs-switch switch {
+  flex: 0 0 60px;
+  width: 60px;
+}
+
+.form-wrapper .each-item.spec {
+  margin-bottom: 10px;
+}
+
+.form-wrapper .each-item.spec textarea {
+  width: 100%;
+  padding: 16px 12px;
+  box-sizing: border-box;
+  font-size: 14px;
+  height: 100px;
+  color: #666;
+}
+
+.form-wrapper .each-item .title {
+  flex: 0 0 65px;
+  width: 65px;
+  font-size: 14px;
+}
+
+.form-wrapper .each-item input {
+  flex: 1;
+  height: 100%;
+}

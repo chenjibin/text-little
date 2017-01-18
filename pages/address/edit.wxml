@@ -1,0 +1,24 @@
+<view class="form-wrapper">
+  <form bindsubmit="submitForm">
+    <view class="each-item fs-input">
+      <label class="title">收货人</label>
+      <input name="name" type="text" value="{{serverData.addressData.name}}"/>
+    </view>
+    <view class="each-item fs-input">
+      <label class="title">联系电话</label>
+      <input name="mobile" type="number" value="{{serverData.addressData.mobile}}"/>
+    </view>
+    <view class="each-item fs-picker">
+      <text class="title">所在地区</text>
+      <text class="area">{{serverData.addressData.area}}</text>
+    </view>
+    <view class="each-item spec">
+      <textarea name="address" placeholder="请填写详细地址" value="{{serverData.addressData.address}}"/>
+    </view>
+    <view class="each-item fs-switch">
+      <label class="title">设为默认</label>
+      <switch name="default" type="switch" checked="{{serverData.addressData.defaultAddress}}"/>
+    </view>
+    <button form-type="submit" class="save-btn">保存</button>
+  </form>
+</view>

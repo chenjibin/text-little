@@ -4,6 +4,7 @@
     "pages/cate/cate",
     "pages/logs/logs",
     "pages/my/myIndex",
+    "pages/my/favorite",
     "pages/goods/detail",
     "pages/goods/list",
     "pages/shoppingcart/cart",
@@ -11,7 +12,11 @@
     "pages/address/list",
     "pages/address/add",
     "pages/address/edit",
-    "pages/order/list"
+    "pages/address/select",
+    "pages/order/list",
+    "pages/order/detail",
+    "pages/coupon/index",
+    "pages/coupon/my"
   ],
   "window":{
     "backgroundTextStyle":"dark",

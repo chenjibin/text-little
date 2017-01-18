@@ -1,0 +1,52 @@
+<view class="top-bar">
+  <radio-group class="order-btn-wrapper" bindchange="orderStateChange">
+    <label class="fs-radio-wrapper" wx:for="{{mainData.toolbarData}}">
+      <radio class="fs-radio" value="{{item.state}}" checked="{{mainData.checkedState === item.state}}">
+        <text class="title">{{item.name}}</text>
+      </radio>
+    </label>
+  </radio-group>
+</view>
+<scroll-view class="fs-scroll-view" scroll-y="true" lower-threshold="50" bindscrolltolower="loadList">
+  <view class="order-list-wrapper">
+    <view class="list-item" wx:for="{{serverData.listData}}" wx:for-item="i">
+      <navigator url="./detail?id={{i.oid}}">
+        <view class="fs-header">
+          <view class="title-wrapper">
+            <text class="title">{{i.storeName}}</text>
+          </view>
+          <view class="state-wrapper">
+            <text class="state">{{i.orderState}}</text>
+          </view>
+        </view>
+        <view class="goodinfo-wrapper">
+          <view class="goodinfo-item" wx:for="{{i.goodsInfo}}" wx:for-item="j">
+            <view class="pic-wrapper">
+              <image src="{{j.pic}}" class="pic"></image>
+            </view>
+            <view class="content">
+              <view class="left-area">
+                <text class="title">{{j.title}}</text>
+                <text class="desc">{{j.specification}}</text>
+              </view>
+              <view class="right-area">
+                <text class="new-price">¥{{j.newPrice}}</text>
+                <text class="old-price">¥{{j.oldPrice}}</text>
+                <text class="num">x{{j.num}}</text>
+              </view>
+            </view>
+          </view>
+        </view>
+      </navigator>
+      <view class="summary-wrapper">
+        <text class="summary">共1件商品 合计:¥</text>
+        <text class="money">{{i.totalPrice}}</text>
+        <text class="free"> (含运费¥{{i.free}})</text>
+      </view>
+      <view class="btn-bar">
+        <text class="btn confirm">确认收货</text>
+        <text class="btn confirm">确认收货</text>
+      </view>
+    </view>
+  </view>
+</scroll-view>

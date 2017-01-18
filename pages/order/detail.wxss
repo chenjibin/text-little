@@ -1,0 +1,189 @@
+page {
+  height: 100%;
+  background-color: #f8f8f8;
+}
+
+.address-wrapper {
+  width: 100%;
+  padding-bottom: 6px;
+}
+
+.address-wrapper .address-content {
+  display: flex;
+  background-color: #fff;
+}
+
+.address-wrapper .address-content .fs-icon {
+  flex: 0 0 40px;
+  width: 40px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 20px 20px;
+}
+
+.address-wrapper .address-content .content {
+  flex: 1;
+  padding: 12px 28px 12px 0;
+}
+
+.address-wrapper .address-content .content .person {
+  float: left;
+}
+
+.address-wrapper .address-content .content .phone {
+  float: right;
+}
+
+.address-wrapper .address-content .content .address {
+  display: block;
+  width: 100%;
+  line-height: 14px;
+  margin-top: 6px;
+}
+
+
+
+.order-detail-wrapper {
+  background-color: #fff;
+  margin-bottom: 10px;
+}
+
+.order-detail-wrapper .fs-header {
+  display: flex;
+  padding: 0 12px;
+  height: 36px;
+  line-height: 36px;
+}
+
+.order-detail-wrapper .fs-header .title-wrapper {
+  flex: 1;
+}
+
+.order-detail-wrapper .fs-header .title-wrapper .title {
+  font-size: 14px;
+}
+
+.order-detail-wrapper .fs-header .state-wrapper {
+  flex: 0 0 120px;
+  width: 120px;
+  text-align: right;
+}
+
+.order-detail-wrapper .fs-header .state-wrapper .state {
+  font-size: 14px;
+  color: #ff4500;
+}
+
+.order-detail-wrapper .goodinfo-wrapper {
+}
+
+.order-detail-wrapper .goodinfo-wrapper .goodinfo-item {
+  display: flex;
+  padding: 12px;
+  background-color: #f8f8f8;
+  margin-bottom: 4px;
+}
+
+.order-detail-wrapper .goodinfo-wrapper .goodinfo-item .pic-wrapper {
+  flex: 0 0 75px;
+  width: 75px;
+}
+
+.order-detail-wrapper .goodinfo-wrapper .goodinfo-item .pic-wrapper .pic {
+  width: 75px;
+  height: 75px;
+}
+
+.order-detail-wrapper .goodinfo-wrapper .content {
+  display: flex;
+  flex: 1;
+}
+
+.order-detail-wrapper .goodinfo-wrapper .content text {
+  display: block;
+}
+
+.order-detail-wrapper .goodinfo-wrapper .content .left-area {
+  flex: 1;
+  padding: 0 0 0 10px;
+}
+
+.order-detail-wrapper .goodinfo-wrapper .content .left-area .title {
+}
+
+.order-detail-wrapper .goodinfo-wrapper .content .left-area .desc {
+  color: #999;
+}
+
+.order-detail-wrapper .goodinfo-wrapper .content .right-area {
+  flex: 0 0 30%;
+  width: 30%;
+  box-sizing: border-box;
+  text-align: right;
+}
+
+.order-detail-wrapper .goodinfo-wrapper .content .right-area .new-price {
+  font-size: 14px;
+}
+
+.order-detail-wrapper .goodinfo-wrapper .content .right-area .old-price {
+  font-size: 14px;
+  text-decoration: line-through;
+  color: #999;
+}
+
+.order-detail-wrapper .goodinfo-wrapper .content .right-area .num {
+  color: #999;
+}
+
+.orderinfo-wrapper {
+  width: 100%;
+  padding: 0 12px 12px 12px;
+  box-sizing: border-box;
+}
+.orderinfo-wrapper view {
+  display: flex;
+  line-height: 14px;
+  margin-bottom: 4px;
+}
+.orderinfo-wrapper .title {
+  flex: 1;
+}
+.orderinfo-wrapper .total-price {
+
+}
+.orderinfo-wrapper .total-price text {
+  color: #999;
+}
+.orderinfo-wrapper .free-price {
+
+}
+.orderinfo-wrapper .free-price text {
+    color: #999;
+}
+.orderinfo-wrapper .ordertotal-price {
+  margin: 10px 0 0 0;
+
+}
+.orderinfo-wrapper .ordertotal-price text {
+  font-size: 16px;
+  
+}
+.order-number-wrapper {
+    margin-top: 10px;
+    padding: 6px 12px;
+    background-color: #fff;
+}
+.order-number-wrapper text {
+  color: #666;
+}
+.order-number-wrapper .order-number {
+  line-height: 14px;
+}
+.order-number-wrapper .result {
+  margin-left: 4px;
+}
+.order-number-wrapper .result.spec {
+  color: #dc0707;
+  font-weight: 700;
+}

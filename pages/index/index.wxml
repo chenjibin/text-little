@@ -11,20 +11,28 @@
 </swiper>
 <view class="special-choose">
   <view class="special-item">
-    <text class="icon star"></text>
-    <text class="title">明星单品</text>
+    <navigator url="../goods/list">
+      <text class="icon star"></text>
+      <text class="title">明星单品</text>
+    </navigator>
   </view>
   <view class="special-item">
-    <text class="icon new"></text>
-    <text class="title">今日新品</text>
+    <navigator url="../goods/list">
+      <text class="icon new"></text>
+      <text class="title">今日新品</text>
+    </navigator>
   </view>
   <view class="special-item">
-    <text class="icon tejia"></text>
-    <text class="title">特价清仓</text>
+    <navigator url="../goods/list">
+      <text class="icon tejia"></text>
+      <text class="title">特价清仓</text>
+    </navigator>
   </view>
   <view class="special-item">
-    <text class="icon coupon"></text>
-    <text class="title">购物券</text>
+    <navigator url="../coupon/index">
+      <text class="icon coupon"></text>
+      <text class="title">购物券</text>
+    </navigator>
   </view>
 </view>
 <form class="search-form">

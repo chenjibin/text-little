@@ -31,13 +31,13 @@
     </view>
   </view>
   <view class="text-btn single">
-    <navigator url="url">
+    <navigator url="./favorite">
       <text class="title">收藏夹</text>
       <text class="sub-title right-arrow-2px">进入收藏夹</text>
     </navigator>
   </view>
   <view class="text-btn single">
-    <navigator url="url">
+    <navigator url="../coupon/my">
       <text class="title">优惠券</text>
       <text class="sub-title right-arrow-2px">查看优惠券</text>
     </navigator>

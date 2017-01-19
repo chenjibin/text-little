@@ -15,3 +15,8 @@
     </label>
   </radio-group>
 </view>
+<navigator url="./list">
+  <view class="fs-btn bottom-btn">
+    <text class="title">管理地址</text>
+  </view>
+</navigator>

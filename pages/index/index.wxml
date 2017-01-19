@@ -35,14 +35,20 @@
     </navigator>
   </view>
 </view>
-<form class="search-form">
+<view class="search-box">
+  <navigator url="../goods/search">
+    <icon type="search" size="16"></icon>
+    <text class="title">搜索幸运叶子商品</text>
+  </navigator>
+</view>
+<!--<form class="search-form">
   <view class="search-goods">
     <input type="text" placeholder="请输入您要搜索的商品" />
   </view>
   <view class="btn-area">
     <button formType="submit">搜索</button>
   </view>
-</form>
+</form>-->
 <view class="top-cate">
   <block wx:for="{{topPicData}}">
     <navigator class="cate-item">

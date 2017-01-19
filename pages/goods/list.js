@@ -100,11 +100,17 @@ Page({
         ]
     },
     onLoad(options) {
-        console.log(options.cateId)
+        console.log(options)
     },
-    onReachBottom() {
+    loadList(event) {
+        console.log(event)
         let goodList = this.data.goodsData
         let newList = this.data.mockGoods
+        wx.showToast({
+            title: '加载中',
+            icon: 'loading',
+            duration: 500
+        });
         newList.forEach((good) => {
             goodList.push(good)
         })

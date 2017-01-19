@@ -305,6 +305,7 @@ Page({
     } else {
       wx.showModal({
         title: '提示',
+        showCancel: false,
         content: '请至少选择一件商品!',
         success: function (res) {
           if (res.confirm) {
@@ -312,7 +313,6 @@ Page({
           }
         }
       })
-
     }
   }
 })

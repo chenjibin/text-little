@@ -153,7 +153,12 @@
 }
 
 .goods-wrapper {
-    padding-top: 40px;
+    position: absolute;
+    left: 0;
+    top: 36px;
+    bottom:0;
+    z-index: 80;
+    width: 100%;
 }
 
 .goods-wrapper .good-item-wrapper {

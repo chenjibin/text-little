@@ -1,0 +1,66 @@
+.search-bar {
+  height: 36px;
+  border-bottom: 1rpx solid #bbb;
+}
+
+.search-bar .search-form {
+  display: block;
+  height: 36px;
+}
+
+.search-bar .search-form .search-form-content {
+  display: flex;
+  width: 100%;
+  height: 36px;
+}
+
+.search-bar .search-form .fs-input-wrapper {
+  flex: 1;
+  height: 36px;
+  line-height: 36px;
+  padding: 4px 12px;
+  box-sizing: border-box;
+}
+
+.search-bar .search-form .fs-input-wrapper label {
+  display: flex;
+  height: 28px;
+  line-height: 28px;
+  background-color: #eee;
+  border-radius: 20px;
+}
+
+.search-bar .search-form .fs-input-wrapper label icon {
+  vertical-align: top;
+  margin-left: 8px;
+  height: 100%;
+  font-size: 22px;
+}
+
+.search-bar .search-form .fs-input-wrapper .fs-input {
+  flex: 1;
+  vertical-align: top;
+  margin-left: 8px;
+  height: 28px;
+  line-height: 28px;
+  font-size: 14px;
+  font-weight: 300;
+}
+
+.search-bar .search-form .btn-group {
+  flex: 0 0 60px;
+  width: 60px;
+  padding: 4px 12px 4px 0;
+  box-sizing: border-box;
+}
+
+.search-bar .search-form .btn {
+  width: 100%;
+  padding: 0;
+}
+
+.search-bar .search-form .btn.search {
+    background-color: #dc0707;
+    border:0 !important;
+    color: #fff;
+}

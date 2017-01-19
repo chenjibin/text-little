@@ -1,0 +1,16 @@
+<view class="search-bar">
+  <form bindsubmit="searchGood" class="search-form">
+    <view class="search-form-content">
+      <view class="fs-input-wrapper">
+        <label>
+          <icon type="search" size="16"></icon>
+          <input class="fs-input" name="keyword" placeholder-style="color:#999;font-size:14px;" placeholder="搜索幸运叶子商品" type="text" focus="true" bindconfirm="searchGood" bindinput="inputHandler"/>
+        </label>
+      </view>
+      <view class="btn-group">
+        <button class="btn cancel" size="mini" cancel bindtap="cancelSearch" wx:if="{{!mainData.searchValue}}">取消</button>
+        <button class="btn search" size="mini" wx:if="{{mainData.searchValue}}" form-type="submit">搜索</button>
+      </view>
+    </view>
+  </form>
+</view>

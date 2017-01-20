@@ -4,7 +4,7 @@
       <view class="fs-input-wrapper">
         <label>
           <icon type="search" size="16"></icon>
-          <input class="fs-input" name="keyword" placeholder-style="color:#999;font-size:14px;" placeholder="搜索幸运叶子商品" type="text" focus="true" bindconfirm="searchGood" bindinput="inputHandler"/>
+          <input class="fs-input" name="keyword" placeholder-style="color:#999;font-size:14px;" placeholder="搜索幸运叶子商品" type="text" focus="true" bindconfirm="confirmSearchGood" bindinput="inputHandler" />
         </label>
       </view>
       <view class="btn-group">
@@ -14,3 +14,27 @@
     </view>
   </form>
 </view>
+<scroll-view class="guess-want">
+  <view class="search-box " wx:if="{{mainData.historyKeyword.length}}">
+    <view class="head-area clearfix">
+      <text class="title">历史搜索</text>
+      <text class="btn" bindtap="cancelHistory">清除</text>
+    </view>
+    <view class="content">
+      <navigator wx:for="{{mainData.historyKeyword}}" url="./list?keyword={{item}}" open-type="redirect">
+        <text class="keyword">{{item}}</text>
+      </navigator>
+    </view>
+  </view>
+  <view class="search-box">
+    <view class="head-area clearfix">
+      <text class="title">热门搜索</text>
+      <text class="btn" bindtap="changeKeyword">换一批</text>
+    </view>
+    <view class="content">
+      <navigator wx:for="{{serverData.keywords}}" url="./list?keyword={{item}}" open-type="redirect">
+        <text class="keyword">{{item}}</text>
+      </navigator>
+    </view>
+  </view>
+</scroll-view>

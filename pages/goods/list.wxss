@@ -1,213 +1,349 @@
 .top-nav {
-   position: fixed;
-   z-index: 100;
-   left: 0;
-   top: 0;
-   width: 100%;
-   height: 36px;
-   background-color: #fff;
+  position: fixed;
+  z-index: 100;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 36px;
+  background-color: #fff;
 }
 
 .top-nav .choose-sort {
-    display: flex;
-    position: relative;
-    font-size: 14px;
-    height: 36px;
-    line-height: 36px;
-    background-color: #fff;
-    border-bottom:1rpx solid #ddd;
-    box-sizing: border-box;
+  display: flex;
+  position: relative;
+  font-size: 14px;
+  height: 36px;
+  line-height: 36px;
+  background-color: #fff;
+  border-bottom: 1rpx solid #ddd;
+  box-sizing: border-box;
 }
 
 .top-nav .choose-sort .all-sort {
-    flex:1;
-    text-align: center;
+  flex: 1;
+  text-align: center;
 }
 
 .top-nav .choose-sort .all-sort .title {
-    font-size: 14px;
-
+  font-size: 14px;
 }
+
 .top-nav .choose-sort .all-sort .title.active {
-    color: #dc0707;
+  color: #dc0707;
 }
 
 .top-nav .choose-sort .toggleBox {
-    position: absolute;
-    left: 0;
-    top: 36px;
-    padding: 0 12px;
-    z-index: -1;
-    width: 100%;
-    background-color: #fff;
-    transform: translate3d(0,-100%,0);
-    transition: all 0.3s ease;
-    box-sizing: border-box;
+  position: absolute;
+  left: 0;
+  top: 36px;
+  padding: 0 12px;
+  z-index: -1;
+  width: 100%;
+  background-color: #fff;
+  transform: translate3d(0, -100%, 0);
+  transition: all 0.3s ease;
+  box-sizing: border-box;
 }
+
 .top-nav .choose-sort .toggleBox.show {
-    transform: translate3d(0,0,0);
+  transform: translate3d(0, 0, 0);
 }
+
 .top-nav .choose-sort .toggleBox .check-item {
-    display: block;
-    font-size: 0;
-    border-bottom: 1rpx solid #ddd;
+  display: block;
+  font-size: 0;
+  border-bottom: 1rpx solid #ddd;
 }
 
 .top-nav .choose-sort .toggleBox .check-item:last-child {
-    border-bottom: 0;
+  border-bottom: 0;
 }
 
 .top-nav .choose-sort .toggleBox .check-item .el-radio {
-    position: relative;
-    vertical-align: middle;
-    font-size: 0;
-    width: 100%;
-   
+  position: relative;
+  vertical-align: middle;
+  font-size: 0;
+  width: 100%;
 }
 
-.top-nav .choose-sort .toggleBox .check-item .el-radio .title{
-    position: absolute;
-    left: 0;
-    top:0;
-    display: block;
-    width: 90px;
-    font-size: 14px;
-    background-color: #fff;
+.top-nav .choose-sort .toggleBox .check-item .el-radio .title {
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: block;
+  width: 90px;
+  font-size: 14px;
+  background-color: #fff;
 }
+
 .top-nav .choose-sort .toggleBox .check-item .el-radio[checked] .title {
-    color:#dc0707;
+  color: #dc0707;
 }
+
 .top-nav .choose-sort .toggleBox .check-item .el-radio .gouzi {
-    display: none;
-    position: absolute;
-    right: 10px;
-    top:0;
-    height: 36px;
-    width: 36px;
-    line-height: 36px;
-    background-color: #fff;
-    font-size: 28px;
-    color:#dc0707;
-    text-align: center;
-    
+  display: none;
+  position: absolute;
+  right: 10px;
+  top: 0;
+  height: 36px;
+  width: 36px;
+  line-height: 36px;
+  background-color: #fff;
+  font-size: 28px;
+  color: #dc0707;
+  text-align: center;
 }
+
 .top-nav .choose-sort .toggleBox .check-item .el-radio[checked] .gouzi {
-   display: block;
+  display: block;
 }
+
 .top-nav .choose-sort .sale-sort {
-    flex:0 0 90px;
-    width: 90px;
-    font-size: 0;
+  flex: 0 0 90px;
+  width: 90px;
+  font-size: 0;
 }
 
 .top-nav .choose-sort .sale-sort .el-radio {
-    position: relative;
-    
+  position: relative;
 }
 
 .top-nav .choose-sort .sale-sort .el-radio[checked] .title {
-    color:#dc0707;
+  color: #dc0707;
 }
+
 .top-nav .choose-sort .sale-sort .el-radio .title {
-    position:absolute;
-    left:0;
-    top:0;
-    z-index:100;
-    width:60px;
-    font-size:14px;
-    background-color:#fff;
-    height: 35px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 100;
+  width: 60px;
+  font-size: 14px;
+  background-color: #fff;
+  height: 35px;
 }
 
 .top-nav .choose-sort .search {
-    flex: 0 0 100px;
-    width: 100px;
-    text-align: center;
-    font-size: 0;
+  flex: 0 0 100px;
+  width: 100px;
+  text-align: center;
+  font-size: 0;
 }
+
 .top-nav .choose-sort .search icon {
-    vertical-align: middle;
-    height: 35px;
-    font-size: 28px;
+  vertical-align: middle;
+  height: 35px;
+  font-size: 28px;
 }
+
 .top-nav .choose-sort .search .title {
-    display: inline-block;
-    vertical-align: middle;
-    margin-left: 2px;
-    font-size: 14px;
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 2px;
+  font-size: 14px;
 }
 
 .mask {
-    width: 100%;
-    height: 100%;
-    position: fixed;
-    left: 0;
-    top: 0;
-    z-index: 90;
-    background-color: rgba(0,0,0,0.2);
-    opacity: 0;
-    transition: opacity 0.3s ease;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 90;
+  background-color: rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
+
 .mask.show {
-    opacity: 1;
+  opacity: 1;
 }
 
 .goods-wrapper {
-    position: absolute;
-    left: 0;
-    top: 36px;
-    bottom:0;
-    z-index: 80;
-    width: 100%;
+  position: absolute;
+  left: 0;
+  top: 36px;
+  bottom: 0;
+  z-index: 80;
+  width: 100%;
 }
-
+.goods-wrapper.active {
+    transform: translate3d(0,100%,0)
+}
 .goods-wrapper .good-item-wrapper {
-    width: 95%;
-    margin: 0 auto;
+  width: 95%;
+  margin: 0 auto;
 }
 
 .goods-wrapper .good-item-wrapper .good-link {
-    display: flex;
+  display: flex;
 }
+
 .goods-wrapper .good-item-wrapper .good-link .good-pic {
-    flex: 0 0 96px;
-    width: 96px;
-    height: 96px;
+  flex: 0 0 96px;
+  width: 96px;
+  height: 96px;
 }
 
 .goods-wrapper .good-item-wrapper .good-link .content {
-    flex: 1;
-    padding: 12rpx;
-    border-bottom:1rpx solid #ddd;
+  flex: 1;
+  padding: 12rpx;
+  border-bottom: 1rpx solid #ddd;
 }
 
 .goods-wrapper .good-item-wrapper .good-link .content .title {
-    display: block;
-    margin-top: 16px;
-    font-size: 12px;
-    line-height: 14px;
-    height: 28px;
-    -webkit-line-clamp: 2;
-    text-overflow: ellipsis;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
+  display: block;
+  margin-top: 16px;
+  font-size: 12px;
+  line-height: 14px;
+  height: 28px;
+  -webkit-line-clamp: 2;
+  text-overflow: ellipsis;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 .goods-wrapper .good-item-wrapper .good-link .content .new-price {
-    display: inline-block;
-    vertical-align: bottom;
-    font-size: 14px;
-    font-family: 'Anton';
-    margin-right: 12rpx;
-    
+  display: inline-block;
+  vertical-align: bottom;
+  font-size: 14px;
+  font-family: 'Anton';
+  margin-right: 12rpx;
 }
 
 .goods-wrapper .good-item-wrapper .good-link .content .old-price {
-    display: inline-block;
-    vertical-align: bottom;
-    font-size: 12px;
-    font-family: 'Anton';
-    color: #999;
-    text-decoration: line-through;
-    
+  display: inline-block;
+  vertical-align: bottom;
+  font-size: 12px;
+  font-family: 'Anton';
+  color: #999;
+  text-decoration: line-through;
+}
+
+/**search组件**/
+.search-component {
+    width: 100%;
+    position: absolute;
+    top: 36px;
+    left: 0;
+    bottom: 0;
+    z-index: 85;
+    transition: transform 0.3s ease-out;
+    transform: translate3d(0,100%,0);
+    background-color: #fff;
+}
+.search-component.active {
+     transform: translate3d(0,0,0);
+}
+.search-bar {
+  height: 36px;
+  border-bottom: 1rpx solid #bbb;
+  background-color: #fff;
+}
+
+.search-bar .search-form {
+  display: block;
+  height: 36px;
+}
+
+.search-bar .search-form .search-form-content {
+  display: flex;
+  width: 100%;
+  height: 36px;
+}
+
+.search-bar .search-form .fs-input-wrapper {
+  flex: 1;
+  height: 36px;
+  line-height: 36px;
+  padding: 4px 12px;
+  box-sizing: border-box;
+}
+
+.search-bar .search-form .fs-input-wrapper label {
+  display: flex;
+  height: 28px;
+  line-height: 28px;
+  background-color: #eee;
+  border-radius: 20px;
+}
+
+.search-bar .search-form .fs-input-wrapper label icon {
+  vertical-align: top;
+  margin-left: 8px;
+  height: 100%;
+  font-size: 22px;
+}
+
+.search-bar .search-form .fs-input-wrapper .fs-input {
+  flex: 1;
+  vertical-align: top;
+  margin-left: 8px;
+  height: 28px;
+  line-height: 28px;
+  font-size: 14px;
+  font-weight: 300;
+}
+
+.search-bar .search-form .btn-group {
+  flex: 0 0 60px;
+  width: 60px;
+  padding: 4px 12px 4px 0;
+  box-sizing: border-box;
+}
+
+.search-bar .search-form .btn {
+  width: 100%;
+  padding: 0;
+}
+
+.search-bar .search-form .btn.search {
+  background-color: #dc0707;
+  border: 0 !important;
+  color: #fff;
+}
+
+.guess-want {
+  position: absolute;
+  left: 0;
+  top: 37px;
+  bottom: 0;
+  width: 100%;
+  padding: 14px 12px;
+  background-color: #fff;
+  box-sizing: border-box;
+}
+
+.guess-want .search-box {
+}
+
+.guess-want .search-box .head-area {
+}
+
+.guess-want .search-box .head-area .title {
+  float: left;
+  font-size: 14px;
+}
+
+.guess-want .search-box .head-area .btn {
+  float: right;
+  margin-top: 2px;
+  color: #dc0707;
+}
+
+.guess-want .search-box .content {
+  margin: 10px 0 20px 0;
+}
+
+.guess-want .search-box navigator {
+  display: inline-block;
+}
+
+.guess-want .search-box .content .keyword {
+  display: inline-block;
+  margin: 0 8px 8px 0;
+  padding: 4px 6px;
+  background-color: #eee;
+  color: #666;
+  border-radius: 6px;
 }

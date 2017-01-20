@@ -10,7 +10,7 @@
           <text class="address">{{item.address}}</text>
         </view>
       </view>
-      <view class="tool-bar">
+      <view class="tool-bar clearfix">
         <label class="choose-radio">
           <radio value="{{item.id}}" checked="{{item.id === serverData.defaultAddress}}">
           </radio>

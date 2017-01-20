@@ -72,12 +72,18 @@ page {
 }
 
 .address-list-wrapper .address-list .list-item .tool-bar .choose-radio {
+  display: inline-block;
 }
 
 .address-list-wrapper .address-list .list-item .tool-bar .choose-radio radio {
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 0;
 }
 
 .address-list-wrapper .address-list .list-item .tool-bar .choose-radio .title {
+  display: inline-block;
+  vertical-align: middle;
 }
 
 .address-list-wrapper .address-list .list-item .tool-bar .btn {
@@ -103,6 +109,7 @@ page {
   background-color: #ff4500;
   text-align: center;
 }
+
 .add-new text {
   font-size: 14px;
   color: #fff;

@@ -7,7 +7,10 @@
   visibility: hidden;
   clear: both;
 }
-
+.navigator-hover {
+    background-color: rgba(0, 0, 0, 0); 
+    opacity: 1;
+}
 text {
   font-size: 12px;
 }

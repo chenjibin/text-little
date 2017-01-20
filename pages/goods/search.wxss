@@ -1,6 +1,12 @@
+page {
+  height: 100%;
+  background-color: #f8f8f8;
+}
+
 .search-bar {
   height: 36px;
   border-bottom: 1rpx solid #bbb;
+  background-color: #fff;
 }
 
 .search-bar .search-form {
@@ -60,7 +66,50 @@
 }
 
 .search-bar .search-form .btn.search {
-    background-color: #dc0707;
-    border:0 !important;
-    color: #fff;
+  background-color: #dc0707;
+  border: 0 !important;
+  color: #fff;
+}
+
+.guess-want {
+  position: absolute;
+  left: 0;
+  top: 37px;
+  bottom: 0;
+  width: 100%;
+  padding: 14px 12px;
+  background-color: #fff;
+  box-sizing: border-box;
+}
+
+.guess-want .search-box {
+}
+
+.guess-want .search-box .head-area {
+}
+
+.guess-want .search-box .head-area .title {
+  float: left;
+  font-size: 14px;
+}
+
+.guess-want .search-box .head-area .btn {
+  float: right;
+  margin-top: 2px;
+  color: #dc0707;
+}
+
+.guess-want .search-box .content {
+  margin: 10px 0 20px 0;
+}
+.guess-want .search-box navigator {
+  display: inline-block;
+}
+.guess-want .search-box .content .keyword {
+  display: inline-block;
+  margin: 0 8px 8px 0;
+  padding: 4px 6px;
+  background-color: #eee;
+  color: #666;
+  border-radius: 6px;
 }

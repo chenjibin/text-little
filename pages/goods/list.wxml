@@ -18,15 +18,55 @@
         <text class="title">{{radioData.radioSaleNum.value}}</text>
       </radio>
     </label>
-    <view class="search">
-      <navigator url="./search">
-        <icon type="search" size="20"></icon>
-        <text class="title">搜索</text>
-      </navigator>
+    <view class="search" bindtap="toggleSearchBox">
+      <icon type="search" size="20"></icon>
+      <text class="title">搜索</text>
     </view>
   </radio-group>
 </view>
-<scroll-view class="goods-wrapper" scroll-y="true" bindscroll="loadList">
+<view class="search-component {{mainData.searchShowClass}}">
+  <view class="search-bar">
+    <form bindsubmit="searchGood" class="search-form">
+      <view class="search-form-content">
+        <view class="fs-input-wrapper">
+          <label>
+            <icon type="search" size="16"></icon>
+            <input class="fs-input"  name="keyword" placeholder-style="color:#999;font-size:14px;" placeholder="搜索幸运叶子商品" type="text"  bindconfirm="confirmSearchGood" bindinput="inputHandler" />
+          </label>
+        </view>
+        <view class="btn-group">
+          <button class="btn cancel" size="mini" cancel bindtap="cancelSearch" wx:if="{{!mainData.searchValue}}">取消</button>
+          <button class="btn search" size="mini" wx:if="{{mainData.searchValue}}" form-type="submit">搜索</button>
+        </view>
+      </view>
+    </form>
+  </view>
+  <scroll-view class="guess-want">
+    <view class="search-box " wx:if="{{mainData.historyKeyword.length}}">
+      <view class="head-area clearfix">
+        <text class="title">历史搜索</text>
+        <text class="btn" bindtap="cancelHistory">清除</text>
+      </view>
+      <view class="content">
+        <navigator wx:for="{{mainData.historyKeyword}}" url="./list?keyword={{item}}" open-type="redirect">
+          <text class="keyword">{{item}}</text>
+        </navigator>
+      </view>
+    </view>
+    <view class="search-box">
+      <view class="head-area clearfix">
+        <text class="title">热门搜索</text>
+        <text class="btn" bindtap="changeKeyword">换一批</text>
+      </view>
+      <view class="content">
+        <navigator wx:for="{{serverData.keywords}}" url="./list?keyword={{item}}" open-type="redirect">
+          <text class="keyword">{{item}}</text>
+        </navigator>
+      </view>
+    </view>
+  </scroll-view>
+</view>
+<scroll-view class="goods-wrapper {{mainData.searchShowClass}}" scroll-y="true" bindscroll="loadList">
   <view class="good-item-wrapper" wx:for="{{goodsData}}">
     <navigator url="./detail?goodId={{item.gid}}" class="good-link">
       <image src="{{item.pic}}" class="good-pic"></image>

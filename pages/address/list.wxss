@@ -203,7 +203,6 @@ page {
 }
 
 .form-wrapper .each-item.spec {
-  margin-bottom: 10px;
 }
 
 .form-wrapper .each-item.spec textarea {

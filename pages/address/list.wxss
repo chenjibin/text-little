@@ -27,7 +27,12 @@ page {
 }
 
 .address-list-wrapper {
-  padding-bottom: 50px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom:50px;
+  z-index: 90;
+  width: 100%;
 }
 
 .address-list-wrapper .address-list {
@@ -85,7 +90,9 @@ page {
   display: inline-block;
   vertical-align: middle;
 }
-
+.address-list-wrapper .address-list .list-item .tool-bar .choose-radio .title.default {
+  color:#dc0707;
+}
 .address-list-wrapper .address-list .list-item .tool-bar .btn {
   float: right;
   border: 1rpx solid #ddd;
@@ -113,4 +120,96 @@ page {
 .add-new text {
   font-size: 14px;
   color: #fff;
+}
+
+.save-btn,.cancel-btn {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  height: 50px;
+  width: 50%;
+  background-color: #fff;
+  border-radius: 0 !important;
+  box-sizing: border-box;
+}
+.save-btn {
+  left: 50%;
+  border-left: 1rpx solid #ddd;
+}
+.save-btn::after,.cancel-btn::after  {
+  border: 0;
+  border-top: 1rpx solid #999;
+  border-radius: 0;
+  box-sizing: border-box;
+}
+
+.form-wrapper {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  z-index: 100;
+  background-color: #fff;
+  transition: transform 0.3s ease-out;
+  transform: translate3d(0, -100%, 0);
+}
+
+.form-wrapper.show {
+  transform: translate3d(0, 0, 0);
+}
+
+.form-wrapper .each-item {
+  background-color: #fff;
+  color: #666;
+  border-bottom: 1rpx solid #ddd;
+}
+
+.form-wrapper .each-item.fs-input, .form-wrapper .each-item.fs-switch,
+.form-wrapper .each-item.fs-picker {
+  display: flex;
+  height: 50px;
+  line-height: 50px;
+  padding: 0 12px;
+}
+
+.form-wrapper .each-item.fs-picker .area {
+  font-size: 14px;
+}
+
+.form-wrapper .each-item.fs-picker .title {
+  flex: 1;
+}
+
+.form-wrapper .each-item.fs-switch .title {
+  flex: 1;
+}
+
+.form-wrapper .each-item.fs-switch switch {
+  flex: 0 0 60px;
+  width: 60px;
+}
+
+.form-wrapper .each-item.spec {
+  margin-bottom: 10px;
+}
+
+.form-wrapper .each-item.spec textarea {
+  width: 100%;
+  padding: 16px 12px;
+  box-sizing: border-box;
+  font-size: 14px;
+  height: 100px;
+  color: #666;
+}
+
+.form-wrapper .each-item .title {
+  flex: 0 0 65px;
+  width: 65px;
+  font-size: 14px;
+}
+
+.form-wrapper .each-item input {
+  flex: 1;
+  height: 100%;
 }

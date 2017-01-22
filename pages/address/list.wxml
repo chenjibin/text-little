@@ -1,27 +1,54 @@
-<view class="address-list-wrapper">
-  <radio-group class="address-list" bindchange="chooseDefaultHandler">
-    <view class="list-item" wx:for="{{serverData.addressData}}">
-      <view class="content">
-        <view class="top-area clearfix">
-          <text class="name">{{item.name}}</text>
-          <text class="phone">{{item.mobile}}</text>
+<view class="main-area-wrapper" hidden="{{mainData.mainFlag}}">
+  <scroll-view class="address-list-wrapper" scroll-y="true">
+    <radio-group class="address-list" bindchange="chooseDefaultHandler">
+      <view class="list-item" wx:for="{{serverData.addressData}}">
+        <view class="content">
+          <view class="top-area clearfix">
+            <text class="name">{{item.name}}</text>
+            <text class="phone">{{item.mobile}}</text>
+          </view>
+          <view class="address-wrapper">
+            <text class="address">{{item.address}}</text>
+          </view>
         </view>
-        <view class="address-wrapper">
-          <text class="address">{{item.address}}</text>
+        <view class="tool-bar clearfix">
+          <label class="choose-radio">
+            <radio value="{{item.id}}" checked="{{item.id === serverData.defaultAddress}}">
+            </radio>
+            <text class="title {{item.id === serverData.defaultAddress? 'default' : ''}}">{{item.id === serverData.defaultAddress? '默认地址' : '设为默认'}}</text>
+          </label>
+          <text class="btn remove" data-id="{{item.id}}" bindtap="removeAddress">删除</text>
+          <text class="btn edit" data-id="{{item.id}}" bindtap="editAddress">编辑</text>
         </view>
       </view>
-      <view class="tool-bar clearfix">
-        <label class="choose-radio">
-          <radio value="{{item.id}}" checked="{{item.id === serverData.defaultAddress}}">
-          </radio>
-          <text class="title">{{item.id === serverData.defaultAddress? '默认地址' : '设为默认'}}</text>
-        </label>
-        <text class="btn remove" data-id="{{item.id}}" bindtap="removeAddress">删除</text>
-        <text class="btn edit" data-id="{{item.id}}" bindtap="editAddress">编辑</text>
-      </view>
-    </view>
-  </radio-group>
+    </radio-group>
+  </scroll-view>
+  <view class="add-new" bindtap="addAddress">
+    <text>添加新地址</text>
+  </view>
 </view>
-<navigator url="./add" class="add-new">
-  <text>添加新地址</text>
-</navigator>
+<view class="form-wrapper {{mainData.formShowClass}}">
+  <form bindsubmit="submitForm">
+    <view class="each-item fs-input">
+      <label class="title">收货人</label>
+      <input name="name" type="text" />
+    </view>
+    <view class="each-item fs-input">
+      <label class="title">联系电话</label>
+      <input name="mobile" type="number" />
+    </view>
+    <view class="each-item fs-picker">
+      <text class="title">所在地区</text>
+      <text class="area">aaaa</text>
+    </view>
+    <view class="each-item spec">
+      <textarea name="address" placeholder="请填写详细地址" />
+    </view>
+    <view class="each-item fs-switch">
+      <label class="title">设为默认</label>
+      <switch name="default" type="switch" />
+    </view>
+    <button form-type="submit" class="save-btn">保存</button>
+    <button class="cancel-btn" bindtap="cancelPop">取消</button>
+  </form>
+</view>

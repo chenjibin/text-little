@@ -1,4 +1,5 @@
 {
     "navigationBarTitleText": "管理收货地址",
-     "backgroundColor": "#f8f8f8"
+     "backgroundColor": "#f8f8f8",
+     "disableScroll": true
 }

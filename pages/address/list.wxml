@@ -8,7 +8,7 @@
             <text class="phone">{{item.mobile}}</text>
           </view>
           <view class="address-wrapper">
-            <text class="address">{{item.address}}</text>
+            <text class="address">{{item.province}} {{item.city}} {{item.area}} {{item.address}}</text>
           </view>
         </view>
         <view class="tool-bar clearfix">
@@ -29,26 +29,45 @@
 </view>
 <view class="form-wrapper {{mainData.formShowClass}}">
   <form bindsubmit="submitForm">
+    <input hidden name="id" value="{{mainData.addressInfo.id}}" />
     <view class="each-item fs-input">
       <label class="title">收货人</label>
-      <input name="name" type="text" />
+      <input name="name" type="text" value="{{mainData.addressInfo.name}}" />
     </view>
     <view class="each-item fs-input">
       <label class="title">联系电话</label>
-      <input name="mobile" type="number" />
+      <input name="mobile" type="number" value="{{mainData.addressInfo.mobile}}" />
     </view>
-    <view class="each-item fs-picker">
+    <view class="each-item fs-picker" bindtap="chooseAreaShow">
       <text class="title">所在地区</text>
-      <text class="area">aaaa</text>
+      <text class="area">{{mainData.addressInfo.province}} {{mainData.addressInfo.city}} {{mainData.addressInfo.area}}</text>
     </view>
     <view class="each-item spec">
-      <textarea name="address" placeholder="请填写详细地址" />
+      <textarea name="address" placeholder="请填写详细地址" value="{{mainData.addressInfo.address}}" />
     </view>
     <view class="each-item fs-switch">
-      <label class="title">设为默认</label>
-      <switch name="default" type="switch" />
+      <label class="title">设为默认{{mainData.sendData}}</label>
+      <switch name="default" type="switch" checked="{{mainData.addressInfo.defaultAddress}}" />
     </view>
     <button form-type="submit" class="save-btn">保存</button>
     <button class="cancel-btn" bindtap="cancelPop">取消</button>
   </form>
+  <view class="area-picker-wrapper {{mainData.chooseAreaClass}}">
+    <view class="confirm-bar">
+      <text class="btn confirm" bindtap="hideChooseArea">完成</text>
+    </view>
+    <picker-view indicator-style="height: 50px;" class="picker-area" value="{{mainData.areaData}}" bindchange="chooseArea">
+      <picker-view-column>
+        <view wx:for="{{mainData.provinceArr}}" style="line-height: 50px">{{item}}年</view>
+      </picker-view-column>
+      <picker-view-column>
+        <view wx:for="{{mainData.provinceArr}}" style="line-height: 50px">{{item}}月</view>
+      </picker-view-column>
+      <picker-view-column>
+        <view wx:for="{{mainData.provinceArr}}" style="line-height: 50px">{{item}}日</view>
+      </picker-view-column>
+    </picker-view>
+    
+  </view>
+  <view class="mask {{mainData.maskShowClass}}" bindtap="hideMaskBox" hidden="{{mainData.maskShowFlag}}"></view>
 </view>

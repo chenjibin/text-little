@@ -58,16 +58,15 @@
     </view>
     <picker-view indicator-style="height: 50px;" class="picker-area" value="{{mainData.areaData}}" bindchange="chooseArea">
       <picker-view-column>
-        <view wx:for="{{mainData.provinceArr}}" style="line-height: 50px">{{item}}年</view>
+        <view wx:for="{{mainData.province}}" class="picker-item">{{item.name}}</view>
       </picker-view-column>
       <picker-view-column>
-        <view wx:for="{{mainData.provinceArr}}" style="line-height: 50px">{{item}}月</view>
+        <view wx:for="{{mainData.city}}" class="picker-item">{{item.name}}</view>
       </picker-view-column>
       <picker-view-column>
-        <view wx:for="{{mainData.provinceArr}}" style="line-height: 50px">{{item}}日</view>
+        <view wx:for="{{mainData.area}}" class="picker-item">{{item.name}}</view>
       </picker-view-column>
     </picker-view>
-    
   </view>
   <view class="mask {{mainData.maskShowClass}}" bindtap="hideMaskBox" hidden="{{mainData.maskShowFlag}}"></view>
 </view>

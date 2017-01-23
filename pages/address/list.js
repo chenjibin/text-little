@@ -1,30 +1,6 @@
-const date = new Date()
-const years = []
-const months = []
-const days = []
-
-for (let i = 1990; i <= date.getFullYear(); i++) {
-    years.push(i)
-}
-
-for (let i = 1; i <= 12; i++) {
-    months.push(i)
-}
-
-for (let i = 1; i <= 31; i++) {
-    days.push(i)
-}
-
+var util = require('../../utils/area.js')
 Page({
     data: {
-        years: years,
-        year: date.getFullYear(),
-        months: months,
-        month: 2,
-        days: days,
-        day: 2,
-        year: date.getFullYear(),
-        value: [9999, 1, 1],
         serverData: {
             addressData: [
                 {
@@ -88,8 +64,7 @@ Page({
                     defaultAddress: 0
                 }
             ],
-            defaultAddress: '34',
-
+            defaultAddress: '34'
         },
         mainData: {
             addressInfo: {},
@@ -97,10 +72,37 @@ Page({
             formShowClass: '',
             chooseAreaClass: '',
             maskShowClass: '',
-            maskShowFlag:true,
-            areaData: [0, 0, 0],
-            provinceArr: ['北京', '江苏省', '重庆', '山东省', '河北省', '北京', '江苏省', '重庆', '山东省', '河北省']
+            maskShowFlag: true,
+            province: [],
+            city: [],
+            area: [],
+            areaData: [0, 0, 0]
         }
+    },
+    onLoad() {
+        let areaData = util.returnAreaData()
+        let value = this.data.mainData.areaData
+        this.setData({
+            'mainData.province': areaData
+        })
+        this.getCorrectArea(value)
+    },
+    getCorrectArea(value) {
+        let areaData = this.data.mainData.province
+        let cityArr = []
+        let areaArr = []
+        let key = value
+        cityArr = areaData[key[0]]['city'][key[1]]
+        console.log(cityArr)
+        cityArr ? key = value : key = [value[0], 0, 0]
+        cityArr = areaData[key[0]]['city']
+        console.log(key)
+        areaArr = areaData[key[0]]['city'][key[1]]['area']
+        this.setData({
+            'mainData.city': cityArr,
+            'mainData.area': areaArr,
+            'mainData.areaData': key
+        })
     },
     chooseDefaultHandler(e) {
         let id = e.detail.value
@@ -154,12 +156,27 @@ Page({
         this.setData({
             'mainData.chooseAreaClass': 'show',
             'mainData.maskShowClass': 'show',
-             'mainData.maskShowFlag': false
+            'mainData.maskShowFlag': false
         })
     },
-    chooseArea(e) {
-        console.log(e)
-
+    chooseArea(event) {
+        let mainAdraData = this.data.mainData.province
+        let value = event.detail.value
+        
+        let province = mainAdraData[value[0]].name
+        let city = mainAdraData[value[0]]['city'][value[1]]
+        city ? value = value : value = [value[0], 0, 0]
+        city = mainAdraData[value[0]]['city'][value[1]].name
+        let area = mainAdraData[value[0]]['city'][value[1]]['area'][value[2]]
+        console.log(area)
+        area ? value = value : value = [value[0], value[1], 0]
+        area = mainAdraData[value[0]]['city'][value[1]]['area'][value[2]].name
+        this.getCorrectArea(value)
+        this.setData({
+            'mainData.addressInfo.province': province,
+            'mainData.addressInfo.city': city,
+            'mainData.addressInfo.area': area
+        })
     },
     hideChooseArea() {
         this.hideMaskBox()
@@ -168,7 +185,7 @@ Page({
         this.setData({
             'mainData.chooseAreaClass': '',
             'mainData.maskShowClass': '',
-             'mainData.maskShowFlag': true
+            'mainData.maskShowFlag': true
         })
     },
     cancelPop() {

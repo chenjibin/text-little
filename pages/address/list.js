@@ -168,7 +168,6 @@ Page({
         city ? value = value : value = [value[0], 0, 0]
         city = mainAdraData[value[0]]['city'][value[1]].name
         let area = mainAdraData[value[0]]['city'][value[1]]['area'][value[2]]
-        console.log(area)
         area ? value = value : value = [value[0], value[1], 0]
         area = mainAdraData[value[0]]['city'][value[1]]['area'][value[2]].name
         this.getCorrectArea(value)
@@ -202,5 +201,5 @@ Page({
             'mainData.mainFlag': true,
             'mainData.formShowClass': 'show'
         })
-    },
+    }
 })

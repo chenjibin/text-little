@@ -1,0 +1,21 @@
+<scroll-view class="myFavorite-wrapper" scroll-y="true">
+  <view class="wrapper">
+    <view class="list-wrapper">
+      <view class="list-item" wx:for="{{serverData.listData}}">
+        <view class="pic-wrapper">
+          <image src="{{item.pic}}" class="pic"></image>
+        </view>
+        <view class="btn-group">
+          <view class="btn check">
+            <navigator url="../goods/detail?goodId={{item.gid}}">
+              <text>查看详情</text>
+            </navigator>
+          </view>
+          <view class="btn cancel" bindtap="cancelFavorite" data-gid="{{item.gid}}">
+            <text>取消收藏</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</scroll-view>

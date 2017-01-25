@@ -1,4 +1,3 @@
-
 <!--商品列表-->
 <view class="top-nav">
   <radio-group class="choose-sort" bindchange="sortChange">
@@ -66,7 +65,7 @@
     </view>
   </scroll-view>
 </view>
-<scroll-view class="goods-wrapper {{mainData.searchShowClass}}" scroll-y="true" bindscroll="loadList">
+<scroll-view class="goods-wrapper {{mainData.searchShowClass}}" scroll-y="true" bindscroll="loadList" wx:if="{{mainData.goodListFlag}}">
   <view class="good-item-wrapper" wx:for="{{goodsData}}">
     <navigator url="./detail?goodId={{item.gid}}" class="good-link">
       <image src="{{item.pic}}" class="good-pic"></image>

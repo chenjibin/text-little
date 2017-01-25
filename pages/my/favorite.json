@@ -1,4 +1,5 @@
 {
     "navigationBarTitleText": "收藏夹",
-    "backgroundColor": "#f8f8f8"
+    "backgroundColor": "#f8f8f8",
+    "disableScroll": true
 }

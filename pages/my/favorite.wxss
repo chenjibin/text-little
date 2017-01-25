@@ -1,4 +1,71 @@
-page{
-    height: 100%;
-    background-color: #f8f8f8;
+page {
+  height: 100%;
+  position: relative;
+}
+
+.myFavorite-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  bottom: 0;
+  overflow: hidden;
+  background-color: #f8f8f8;
+}
+
+.myFavorite-wrapper .list-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+.myFavorite-wrapper .wrapper {
+    min-height: 101%;
+}
+.myFavorite-wrapper .list-item {
+  flex: 0 0 50%;
+  width: 50%;
+  padding-bottom: 10px;
+  box-sizing: border-box;
+  background-color: #fff;
+  border-bottom: 2px solid #f8f8f8;
+  border-top: 2px solid #f8f8f8;
+}
+
+.myFavorite-wrapper .list-item:nth-of-type(odd) {
+  border-right: 2px solid #f8f8f8;
+}
+
+.myFavorite-wrapper .list-item:nth-of-type(even) {
+  border-left: 2px solid #f8f8f8;
+}
+
+.myFavorite-wrapper .list-item .pic-wrapper {
+}
+
+.myFavorite-wrapper .list-item .pic-wrapper .pic {
+  max-width: 100%;
+  height: 372rpx;
+}
+
+.myFavorite-wrapper .list-item .btn-group {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.myFavorite-wrapper .list-item .btn-group .btn {
+    display: inline-block;
+    width: 50%;
+    height: 30px;
+    line-height: 30px;
+    box-sizing: border-box;
+    text-align: center;
+    color: #fff;
+}
+
+.myFavorite-wrapper .list-item .btn-group .btn.check {
+    background-color: #dc0707;
+
+}
+.myFavorite-wrapper .list-item .btn-group .btn.cancel {
+    background-color: #333;
 }

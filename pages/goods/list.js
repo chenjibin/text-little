@@ -23,7 +23,8 @@ Page({
         mainData: {
             searchValue: null,
             historyKeyword: null,
-            searchShowClass: ''
+            searchShowClass: '',
+            goodListFlag: true
         },
         mockGoods: [
             {
@@ -198,10 +199,11 @@ Page({
     toggleSearchBox() {
         console.log('shw')
         let show = this.data.mainData.searchShowClass
-        console.log(show)
+        let goodListFlag = this.data.mainData.goodListFlag
         show ? show = '' : show = 'active'
         this.setData({
-            'mainData.searchShowClass': show
+            'mainData.searchShowClass': show,
+            'mainData.goodListFlag': !goodListFlag
         })
     },
     cancelHistory() {
@@ -224,7 +226,8 @@ Page({
     },
     cancelSearch() {
         this.setData({
-            'mainData.searchShowClass': ''
+            'mainData.searchShowClass': '',
+            'mainData.goodListFlag': true
         })
     },
     searchGood(e) {

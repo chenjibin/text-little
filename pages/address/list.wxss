@@ -158,15 +158,19 @@ page {
   width: 100%;
   z-index: 100;
   background-color: #fff;
-  transition: transform 0.3s ease-out;
+  transition: transform 0.3s;
   transform: translate3d(0, -100%, 0);
   overflow: hidden;
 }
-
+.form-wrapper textarea {
+  visibility: hidden;
+}
 .form-wrapper.show {
   transform: translate3d(0, 0, 0);
 }
-
+.form-wrapper.show textarea{
+   visibility: visible
+}
 .form-wrapper.show .area-picker-wrapper {
   transform: translate3d(0, 100%, 0);
 }

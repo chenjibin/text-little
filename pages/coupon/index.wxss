@@ -1,3 +1,7 @@
+page {
+  background-color: #f8f8f8;
+}
+
 .fs-get-coupon .fs-coupon-block:nth-of-type(odd) {
     padding: 0 2px 0 4px;
 
@@ -41,12 +45,16 @@
 }
 
 .fs-coupon-box .top {
+  display: flex;
   overflow: hidden;
+  padding-top: 12px;
+  padding-left: 6px;
   width: 100%;
   height: 70%;
   background-color: #e5e1f2;
   border-radius: 4px 4px 0 0;
   box-sizing: border-box;
+  
 }
 
 .fs-coupon-box .top::before {
@@ -55,38 +63,31 @@
   width: 8px;
   height: 8px;
   position: absolute;
+  top: -4px;
   right: 38px;
   z-index: 11;
-  background: #fff;
+  background: #f8f8f8;
   border-radius: 50%;
 }
-
-.fs-coupon-box .top::before {
-  top: -4px;
-}
-
-.fs-coupon-box .top.spec {
-  background-repeat: no-repeat;
-  background-position-y: -36px;
-  background-size: 6rem;
-}
-
 .fs-coupon-box .top .desc {
-  font-size: 16px;
-  font-weight: 700;
-  position: relative;
-  top: -2px;
+  flex: 1;
+  padding-top: 6px;
+  padding-left: 4px;
+  font-size: 12px;
 }
 
+.fs-coupon-box .top .symbol {
+  color: #4312c0;
+}
 .fs-coupon-box .top .num {
-  font-size: 30px;
+  font-size: 20px;
   font-weight: 700;
   color: #4312c0;
-  position: relative;
 }
 
 .fs-coupon-box .bottom {
   overflow: hidden;
+  padding-left: 6px;
   width: 100%;
   height: 30%;
   background: -webkit-linear-gradient(#3f15c2, #4e02a5);
@@ -103,7 +104,7 @@
   position: absolute;
   right: 38px;
   z-index: 11;
-  background: #fff;
+  background: #f8f8f8;
   border-radius: 50%;
 }
 
@@ -118,11 +119,11 @@
 
 .fs-coupon-box .line {
   height: 100%;
-  border-left: 2px dotted #fff;
+  border-left: 2px dotted #f8f8f8;
   width: 2px;
   position: absolute;
   z-index: 101;
-  right: 41px;
+  right: 39px;
   top: 0;
 }
 

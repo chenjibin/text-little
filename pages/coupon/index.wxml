@@ -1,50 +1,21 @@
 <view class="fs-get-coupon">
-  <view class="fs-coupon-block">
+  <view class="fs-coupon-block" wx:for="{{serverData.couponData}}">
     <view class="fs-coupon-box ">
       <view class="top spec">
-        <text class="num">5</text>
-        <text class="desc">满5.01元使用</text>
+        <text class="symbol">¥</text>
+        <text class="num">{{item.money}}</text>
+        <text class="desc">
+          <text class="content">{{item.desc}}</text>
+        </text>
       </view>
       <view class="bottom">
-        <text class="title">幸运叶子官网</text>
+        <text class="title">{{item.bottomText}}</text>
       </view>
       <text class="line"></text>
     </view>
     <view class="fs-get-box">
-      <text class="left">剩余:80%</text>
-      <text class="progress" data-num="1" style="background-position: -80% center;"></text>
-    </view>
-  </view>
-  <view class="fs-coupon-block">
-    <view class="fs-coupon-box ">
-      <view class="top spec">
-        <text class="num">5</text>
-        <text class="desc">满5.01元使用</text>
-      </view>
-      <view class="bottom">
-        <text class="title">幸运叶子官网</text>
-      </view>
-      <text class="line"></text>
-    </view>
-    <view class="fs-get-box">
-      <text class="left">剩余:80%</text>
-      <text class="progress" data-num="1" style="background-position: -80% center;"></text>
-    </view>
-  </view>
-  <view class="fs-coupon-block">
-    <view class="fs-coupon-box ">
-      <view class="top spec">
-        <text class="num">5</text>
-        <text class="desc">满5.01元使用</text>
-      </view>
-      <view class="bottom">
-        <text class="title">幸运叶子官网</text>
-      </view>
-      <text class="line"></text>
-    </view>
-    <view class="fs-get-box">
-      <text class="left">剩余:80%</text>
-      <text class="progress" data-num="1" style="background-position: -80% center;"></text>
+      <text class="left">剩余:{{item.leftNum}}%</text>
+      <text class="progress" data-num="1" style="background-position: -{{item.leftNum}}% center;"></text>
     </view>
   </view>
 </view>

@@ -9,23 +9,33 @@ page {
   top: 0;
   left: 0;
   width: 100%;
+  padding: 0 6px;
   height: 36px;
   line-height: 36px;
   background-color: #fff;
   border-bottom: 1rpx solid #ddd;
   box-sizing: border-box;
 }
-
+.top-bar .nav-line {
+  position: absolute;
+  left: 0;
+  top: 34px;
+  height: 2px;
+  background-color: #dc0707;
+  border-radius: 4px;
+  transition: transform 0.2s ease-out;
+}
 .order-btn-wrapper .wx-radio-input {
   display: none;
 }
 
 .order-btn-wrapper {
   display: flex;
+  position: relative;
 }
 
 .order-btn-wrapper .fs-radio-wrapper {
-  flex: 0 0 20%;
+  flex: 1;
   text-align: center;
 }
 
@@ -40,7 +50,7 @@ page {
 }
 
 .order-btn-wrapper .fs-radio-wrapper .fs-radio[checked] {
-  border-bottom: 2px solid #dc0707;
+  /*border-bottom: 2px solid #dc0707;*/
 }
 
 .order-btn-wrapper .fs-radio-wrapper .fs-radio[checked] .title {

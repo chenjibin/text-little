@@ -1,24 +1,25 @@
 <view class="top-bar">
   <radio-group class="order-btn-wrapper" bindchange="orderStateChange">
-    <label class="fs-radio-wrapper" wx:for="{{mainData.toolbarData}}">
+    <label class="fs-radio-wrapper" wx:for="{{mainData.toolbarData}}" bindtap="tabChange" data-lid="{{index}}">
       <radio class="fs-radio" value="{{item.state}}" checked="{{mainData.checkedState === item.state}}">
         <text class="title">{{item.name}}</text>
       </radio>
     </label>
+    <view class="nav-line" style="transform:translate3d({{mainData.line * 100}}%,0,0);width:{{mainData.lineWidth}}%"></view>
   </radio-group>
 </view>
 <scroll-view class="fs-scroll-view" scroll-y="true" lower-threshold="50" bindscrolltolower="loadList">
   <view class="order-list-wrapper">
     <view class="list-item" wx:for="{{serverData.listData}}" wx:for-item="i">
-      <navigator url="./detail?id={{i.oid}}">
-        <view class="fs-header">
-          <view class="title-wrapper">
-            <text class="title">{{i.storeName}}</text>
-          </view>
-          <view class="state-wrapper">
-            <text class="state">{{i.orderState}}</text>
-          </view>
+      <view class="fs-header">
+        <view class="title-wrapper">
+          <text class="title">{{i.storeName}}</text>
         </view>
+        <view class="state-wrapper">
+          <text class="state">{{i.orderState}}</text>
+        </view>
+      </view>
+      <navigator url="./detail?id={{i.oid}}">
         <view class="goodinfo-wrapper">
           <view class="goodinfo-item" wx:for="{{i.goodsInfo}}" wx:for-item="j">
             <view class="pic-wrapper">

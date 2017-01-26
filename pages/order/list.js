@@ -63,6 +63,8 @@ Page({
         },
         mainData: {
             checkedState: 'all',
+            line:0,
+            lineWidth:null,
             toolbarData: [
                 {
                     name: '全部',
@@ -89,14 +91,34 @@ Page({
     },
     onLoad(options) {
         let state = options.state
+        let toolbarData = this.data.mainData.toolbarData
+        let toolbarLength = toolbarData.length
+        let lineWidth = 100 / toolbarLength
+        let linId = null
+        toolbarData.forEach((item,index) => {
+            if(item.state === state) {
+                linId = index
+                return
+            }
+        })
+        console.log(lineWidth)
         this.setData({
-            'mainData.checkedState': state
+            'mainData.checkedState': state,
+            'mainData.lineWidth': lineWidth,
+            'mainData.line': linId
         })
     },
     orderStateChange(e) {
-        console.log(e.detail.value)
     },
     loadList() {
         console.log('aa')
+    },
+    tabChange(e) {
+        console.log(e)
+        let line = parseInt(e.currentTarget.dataset.lid)
+        console.log(line)
+        this.setData({
+            'mainData.line':line
+        })
     }
 })
